@@ -20,15 +20,13 @@ public class EnemyBehaviour : MonoBehaviour {
 		{
 			waypoints.Add(way);
 		}
-		waypoints.Sort(SortByName);
+	
+		if(waypoints.Count>0)
 		transform.position = waypoints [index].transform.position;
 
 		index = index + 1;
 	}
 
-	private static int SortByName(GameObject o1, GameObject o2) {
-		return o1.name.CompareTo(o2.name);
-	}
 
 	// Update is called once per frame
 	void Update () {

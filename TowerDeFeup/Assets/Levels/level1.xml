@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game>
+	<tilesX>10</tilesX>
+	<tilesY>10</tilesY>
+     <path>
+           <tile><x>0</x><y>0</y></tile>
+           <tile><x>0</x><y>1</y></tile>
+           <tile><x>0</x><y>2</y></tile>
+           <tile><x>1</x><y>2</y></tile>
+           <tile><x>2</x><y>2</y></tile>
+           <tile><x>3</x><y>2</y></tile>
+           <tile><x>3</x><y>3</y></tile>
+           <tile><x>3</x><y>4</y></tile>
+           <tile><x>3</x><y>5</y></tile>
+           <tile><x>4</x><y>5</y></tile>
+           <tile><x>5</x><y>5</y></tile>
+           <tile><x>5</x><y>6</y></tile>
+           <tile><x>5</x><y>7</y></tile>
+           <tile><x>5</x><y>8</y></tile>
+           <tile><x>6</x><y>8</y></tile>
+     </path>
+   	
+   	 <waves>
+	     <wave>
+	     	<content>
+		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
+	     	</content>
+	     </wave>
+	 </waves>   
+</game>

@@ -6,6 +6,7 @@ public class TowerBehaviour : MonoBehaviour {
 
 	private List<GameObject> enemies= new List<GameObject>();
 	public float speed;
+	public float timeBeetweenShoots;
 	public GameObject bullet;
 	public float distance;
 
@@ -16,7 +17,7 @@ public class TowerBehaviour : MonoBehaviour {
 			enemies.Add(enemy);
 		}
 
-		Invoke("CreateBullet", 2.0f);
+		Invoke("CreateBullet", timeBeetweenShoots);
 	}
 
 	void CreateBullet()
@@ -27,15 +28,10 @@ public class TowerBehaviour : MonoBehaviour {
 			bullet.GetComponent<BulletBehaviour> ().enemy = enemies [0];
 			Instantiate (bullet, transform.position, Quaternion.identity);
 
-			Invoke ("CreateBullet", 2.0f);
+				Invoke ("CreateBullet", timeBeetweenShoots);
 			}
 		}
 
-	}
-
-	void OnMouseOver(){
-		bullet.GetComponent<BulletBehaviour> ().enemy = enemies [0];
-		Instantiate (bullet, transform.position, Quaternion.identity);
 	}
 
 	// Update is called once per frame
@@ -52,6 +48,8 @@ public class TowerBehaviour : MonoBehaviour {
 			RotateTower ();
 		}
 	}
+
+
 
 	void RotateTower()
 	{
