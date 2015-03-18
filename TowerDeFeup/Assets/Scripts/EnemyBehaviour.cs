@@ -21,7 +21,7 @@ public class EnemyBehaviour : MonoBehaviour {
 			waypoints.Add(way);
 		}
 	
-		Debug.Log (waypoints.Count);
+
 		if(waypoints.Count>0)
 		transform.position = waypoints [index].transform.position;
 
