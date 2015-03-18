@@ -11,8 +11,8 @@ public class GridLayoutBehaviour : MonoBehaviour {
 	private int tilesY;
 
 	// Use this for initialization
-	void Start () {
-
+	void Awake () {
+		this.GetComponent<XmlReader> ().read();
 		Container container = this.GetComponent<XmlReader>().container;
 
 		tilesX = container.tilesX;

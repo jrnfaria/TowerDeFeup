@@ -50,7 +50,7 @@ public class XmlReader : MonoBehaviour {
 	
 	public Container container;
 
-	void Awake () {
+	public void read () {
 
 		//read xml
 		var serializer = new XmlSerializer (typeof(Container));
@@ -58,8 +58,6 @@ public class XmlReader : MonoBehaviour {
 		container = serializer.Deserialize (stream) as Container;
 		stream.Close ();
 
-		Debug.Log (container.waves.Count);
-		Debug.Log (container.waves[0].content.Count);
 
 	}
 
