@@ -1,11 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\level1.xml">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Teste\Teste\Assets\FEP.cs">
     <Files>
-      <File FileName="TowerDeFeup.sln" Line="1" Column="1" />
-      <File FileName="Assets\teste.cs" Line="12" Column="3" />
-      <File FileName="Assets\Scripts\GridLayoutBehaviour.cs" Line="18" Column="5" />
-      <File FileName="Assets\Levels\level1.xml" Line="26" Column="44" />
+      <File FileName="..\..\Teste\Teste\Assets\FEP.cs" Line="34" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
