@@ -10,6 +10,7 @@ public class TowerBehaviour : MonoBehaviour {
 	public float timeBeetweenShoots;
 	public GameObject bullet;
 	public float distance;
+	public bool drawRange=false;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,14 @@ public class TowerBehaviour : MonoBehaviour {
 		}
 	}
 
+
+	void OnMouseEnter(){
+		drawRange = true;
+	}
+
+	void OnMouseExit(){
+		drawRange = false;
+	}
 
 
 	void CreateBullet()

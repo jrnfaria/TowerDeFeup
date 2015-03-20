@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\TileBehaviour.cs" />
      <Compile Include="Assets\Scripts\TowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\TowerRangeBehaviour.cs" />
      <Compile Include="Assets\Scripts\XmlReader.cs" />
      <None Include="Assets\Levels\level1.xml" />
  <Reference Include="UnityEngine.UI">

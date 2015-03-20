@@ -58,6 +58,7 @@ public class XmlReader : MonoBehaviour {
 		container = serializer.Deserialize (stream) as Container;
 		stream.Close ();
 
+
 	}
 
 
