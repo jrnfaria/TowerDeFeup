@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BitmapDrawing.cs" />
      <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
@@ -55,7 +54,6 @@
      <Compile Include="Assets\Scripts\TileBehaviour.cs" />
      <Compile Include="Assets\Scripts\TowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\XmlReader.cs" />
-     <Compile Include="Assets\teste.cs" />
      <None Include="Assets\Levels\level1.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
