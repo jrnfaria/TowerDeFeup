@@ -46,15 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
-     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
-     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\GridLayoutBehaviour.cs" />
-     <Compile Include="Assets\Scripts\HealthBar.cs" />
-     <Compile Include="Assets\Scripts\TileBehaviour.cs" />
-     <Compile Include="Assets\Scripts\TowerBehaviour.cs" />
-     <Compile Include="Assets\Scripts\TowerRangeBehaviour.cs" />
-     <Compile Include="Assets\Scripts\XmlReader.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Enemies\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\TileBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\BulletBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\TowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\TowerRangeBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Utilities\XmlReader.cs" />
      <None Include="Assets\Levels\level1.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
