@@ -4,16 +4,22 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour {
 
 	public GameObject enemy;
+	private int count=0;
+	private int enemyNo;
 
 	// Use this for initialization
 	void Start () {
-		Instantiate (enemy, transform.position, Quaternion.identity);
+		this.GetComponent<XmlReader> ().read();
+		Container container = this.GetComponent<XmlReader>().container;
 		
-		//container.waves[0].content[0].quantity;
+		enemyNo = container.waves [0].content [0].quantity;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (count <= enemyNo) {
+			Instantiate (enemy, transform.position, Quaternion.identity);
+			count++;
+		}
 	}
 }
