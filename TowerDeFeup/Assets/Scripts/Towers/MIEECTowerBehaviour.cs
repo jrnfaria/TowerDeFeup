@@ -11,7 +11,7 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	private GameObject shootedEnemy;
 	public float speed;
 	public float timeBeetweenShoots;
-	public GameObject bullet;
+	public GameObject spark;
 	public float distance;
 	
 	// Use this for initialization
@@ -61,8 +61,8 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	{
 		if (enemies.Count > 0) {
 			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
-				bullet.GetComponent<BulletBehaviour> ().enemy = shootedEnemy;
-				Instantiate (bullet, transform.position, Quaternion.identity);
+				spark.GetComponent<SparkBehaviour> ().enemy = shootedEnemy;
+				Instantiate (spark, transform.position, Quaternion.identity);
 			}
 		}
 		Invoke ("CreateBullet", timeBeetweenShoots);
