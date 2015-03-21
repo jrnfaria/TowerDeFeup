@@ -24,7 +24,6 @@
 	     <wave>
 	     	<content>
 		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
-		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
 	     	</content>
 	     </wave>
 	 </waves>   
