@@ -9,17 +9,19 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.GetComponent<XmlReader> ().read();
-		Container container = this.GetComponent<XmlReader>().container;
-		
-		enemyNo = container.waves [0].content [0].quantity;
+		enemyNo = this.GetComponent<XmlReader> ().container.waves[0].content[0].quantity;
+		Invoke ("SpawnEnemy", 2);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (count <= enemyNo) {
+	}
+
+	public void SpawnEnemy(){
+		if (count < enemyNo) {
 			Instantiate (enemy, transform.position, Quaternion.identity);
 			count++;
+			Invoke ("SpawnEnemy", 2);
 		}
 	}
 }
