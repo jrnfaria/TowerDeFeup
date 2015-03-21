@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\GameLogic\TileBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\BulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\SparkBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerRangeBehaviour.cs" />
      <Compile Include="Assets\Scripts\Utilities\XmlReader.cs" />

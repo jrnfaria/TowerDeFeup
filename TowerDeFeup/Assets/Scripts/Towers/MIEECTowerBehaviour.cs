@@ -2,81 +2,98 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MIEECTowerBehaviour : MonoBehaviour {
-
+public class MIEECTowerBehaviour : MonoBehaviour
+{
+	
 	private TowerRangeBehaviour rangeScript;
 	public GameObject range;
-
-	private List<GameObject> enemies= new List<GameObject>();
-	public float distance;
+	private List<GameObject> enemies = new List<GameObject> ();
+	private GameObject shootedEnemy;
+	public float speed;
 	public float timeBeetweenShoots;
-
-	// Use this for initialization
-	void Start () {
+	public GameObject bullet;
+	public float distance;
 	
-		rangeScript=range.GetComponent<TowerRangeBehaviour> ();
+	// Use this for initialization
+	void Start ()
+	{
+		getEnemies ();
+		
+		Invoke ("CreateBullet", timeBeetweenShoots);
+		
+		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
-
-		getEnemies ();
-		Invoke ("ThunderAttack", timeBeetweenShoots);
 	}
-
-	void ThunderAttack()
+	
+	void getEnemies ()
 	{
-		List<GameObject> inRangeEnemies = getInRangeEnemies ();
-
-		foreach(GameObject enemy in inRangeEnemies)
-		{
-			EnemyBehaviour enemyScript=enemy.GetComponent<EnemyBehaviour>();
-			enemyScript.health=enemyScript.health-1;
-
-			if(enemyScript.health<=0)
-			{
-				Destroy (enemy.transform.parent.gameObject);
-			}
-		}
-
-		Invoke ("ThunderAttack", timeBeetweenShoots);
-	}
-
-	void getEnemies()
-	{
-		enemies= new List<GameObject>();
+		enemies = new List<GameObject> ();
 		
-		foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-		{
-			enemies.Add(enemy);
+		foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
+			enemies.Add (enemy);
 		}
-
-	}
-
-	List<GameObject> getInRangeEnemies()
-	{
-		List<GameObject> rsp=new List<GameObject>();
-
-		foreach (GameObject enemy in enemies) {
-			Vector3 enemyPos = enemy.transform.position;
-			float enemyDist = Vector3.Distance(enemyPos, transform.position);
-			if (enemyDist < distance) {
-				rsp.Add (enemy);
-			}
-		}
-		return rsp;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		
 		getEnemies ();
-
-	}
-
-	void OnMouseEnter(){
-		rangeScript.setRange(true);
+		
+		if (enemies.Count > 0) {
+			GetNearestEnemy ();
+			RotateTower ();
+		}
 	}
 	
-	void OnMouseExit(){
-		rangeScript.setRange(false);
+	void OnMouseEnter ()
+	{
+		rangeScript.setRange (true);
 	}
-
+	
+	void OnMouseExit ()
+	{
+		rangeScript.setRange (false);
+	}
+	
+	void CreateBullet ()
+	{
+		if (enemies.Count > 0) {
+			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+				bullet.GetComponent<BulletBehaviour> ().enemy = shootedEnemy;
+				Instantiate (bullet, transform.position, Quaternion.identity);
+			}
+		}
+		Invoke ("CreateBullet", timeBeetweenShoots);
+	}
+	
+	void GetNearestEnemy ()
+	{
+		float nearestDistanceSqr = Mathf.Infinity;
+		GameObject nearestObj = null;
+		
+		// loop through each tagged object, remembering nearest one found
+		foreach (GameObject enemy in enemies) {
+			Vector3 enemyPos = enemy.transform.position;
+			float distanceSqr = Vector3.Distance(enemyPos, transform.position);
+			
+			if (distanceSqr < nearestDistanceSqr) {
+				nearestObj = enemy;
+				nearestDistanceSqr = distanceSqr;
+			}
+		}
+		shootedEnemy = nearestObj;
+	}
+	
+	void RotateTower ()
+	{
+		if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+			Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
+			float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
+			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
+			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
+		} else
+			transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime); 
+	}
 }
