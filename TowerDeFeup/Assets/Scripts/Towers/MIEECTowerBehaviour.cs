@@ -18,10 +18,6 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		SpriteRenderer sr=GetComponent<SpriteRenderer>();
-		if(sr==null) return;
-		width=sr.sprite.bounds.size.x;
-		height=sr.sprite.bounds.size.y;
 
 		getEnemies ();
 		
@@ -48,11 +44,11 @@ public class MIEECTowerBehaviour : MonoBehaviour
 		if (enemies.Count > 0) {
 			GameObject oldShooted = shootedEnemy;
 			GetNearestEnemy ();
+			RotateTower ();
 			if (oldShooted != shootedEnemy) {
 				Destroy(spark2);
 				CreateBullet ();
 			}
-			RotateTower ();
 		}
 	}
 	
@@ -72,6 +68,8 @@ public class MIEECTowerBehaviour : MonoBehaviour
 			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 				spark.GetComponent<SparkBehaviour> ().enemy = shootedEnemy;
 				spark2 = Instantiate (spark, transform.position, Quaternion.identity)as GameObject;
+			}else{
+				Invoke("CreateBullet",0.1f);
 			}
 		}
 	}
@@ -100,7 +98,7 @@ public class MIEECTowerBehaviour : MonoBehaviour
 			Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
 			float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
 			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
+			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed *10* Time.deltaTime); 
 		} else {
 			transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime);
 			Destroy(spark2);
