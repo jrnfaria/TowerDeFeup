@@ -11,15 +11,19 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	private GameObject shootedEnemy;
 	public float speed;
 	public float timeBeetweenShoots;
-	public GameObject spark;
+	public GameObject spark, spark2;
 	public float distance;
-	
+	public float width, height;
+
 	// Use this for initialization
 	void Start ()
 	{
+		SpriteRenderer sr=GetComponent<SpriteRenderer>();
+		if(sr==null) return;
+		width=sr.sprite.bounds.size.x;
+		height=sr.sprite.bounds.size.y;
+
 		getEnemies ();
-		
-		Invoke ("CreateBullet", timeBeetweenShoots);
 		
 		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
@@ -42,7 +46,12 @@ public class MIEECTowerBehaviour : MonoBehaviour
 		getEnemies ();
 		
 		if (enemies.Count > 0) {
+			GameObject oldShooted = shootedEnemy;
 			GetNearestEnemy ();
+			if (oldShooted != shootedEnemy) {
+				Destroy(spark2);
+				CreateBullet ();
+			}
 			RotateTower ();
 		}
 	}
@@ -57,15 +66,14 @@ public class MIEECTowerBehaviour : MonoBehaviour
 		rangeScript.setRange (false);
 	}
 	
-	void CreateBullet ()
+	public void CreateBullet ()
 	{
 		if (enemies.Count > 0) {
 			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 				spark.GetComponent<SparkBehaviour> ().enemy = shootedEnemy;
-				Instantiate (spark, transform.position, Quaternion.identity);
+				spark2 = Instantiate (spark, transform.position, Quaternion.identity)as GameObject;
 			}
 		}
-		Invoke ("CreateBullet", timeBeetweenShoots);
 	}
 	
 	void GetNearestEnemy ()
@@ -93,7 +101,9 @@ public class MIEECTowerBehaviour : MonoBehaviour
 			float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
 			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
 			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
-		} else
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime); 
+		} else {
+			transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime);
+			Destroy(spark2);
+		}
 	}
 }
