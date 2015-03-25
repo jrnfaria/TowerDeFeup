@@ -3,14 +3,33 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
 
-	public GameObject enemy;
-	private int count=0;
-	private int enemyNo;
+	private GameObject enemy;
+	private int[][]enemyNo;
+	private string[][]enemyType;
+	private XmlReader xml;
+	private int k=0, j=0, l=0;
 
 	// Use this for initialization
 	void Start () {
-		enemyNo = this.GetComponent<XmlReader> ().container.waves[0].content[0].quantity;
-		Invoke ("SpawnEnemy", 2);
+		xml = this.GetComponent<XmlReader> ();
+
+		//init matrix
+		enemyNo = new int[xml.container.waves.Count] [];
+		enemyType = new string[xml.container.waves.Count] [];
+		for (int h=0; h< xml.container.waves.Count; h++) {
+			enemyNo[h] = new int[xml.container.waves[h].content.Count];
+			enemyType[h] = new string[xml.container.waves[h].content.Count];
+		}
+
+		//get Type and quantity
+		for (int h=0; h< enemyNo.Length; h++) {
+			for (int i=0; i< enemyNo[0].Length; i++) {
+				enemyType[h][i] = xml.container.waves [h].content [i].type;
+				enemyNo[h][i] = xml.container.waves [h].content [i].quantity;
+			}
+		}
+
+		Invoke ("SpawnEnemy", 0.5f);
 	}
 	
 	// Update is called once per frame
@@ -18,10 +37,20 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	public void SpawnEnemy(){
-		if (count < enemyNo) {
-			Instantiate (enemy, transform.position, Quaternion.identity);
-			count++;
-			Invoke ("SpawnEnemy", 2);
+		if(l<enemyNo.Length){//wave number
+			if (k < enemyNo[0].Length) {//enemy type number
+				if (j < enemyNo[l][k]) {//enemy number
+					j++;
+					Instantiate (Resources.Load (enemyType[l][k]), transform.position, Quaternion.identity);
+				}else{
+					k++;
+					j=0;
+				}
+			}else{
+				l++;
+				k=0;
+			}
+			Invoke ("SpawnEnemy", 0.5f);
 		}
 	}
 }
