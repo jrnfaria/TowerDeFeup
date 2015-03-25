@@ -10,8 +10,8 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	private List<GameObject> enemies = new List<GameObject> ();
 	private GameObject shootedEnemy;
 	public float speed;
-	public float timeBeetweenShoots;
-	public GameObject spark, spark2;
+	public GameObject spark;
+	private GameObject spark2;
 	public float distance;
 	public float width, height;
 
@@ -98,7 +98,7 @@ public class MIEECTowerBehaviour : MonoBehaviour
 			Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
 			float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
 			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed *10* Time.deltaTime); 
+			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
 		} else {
 			transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime);
 			Destroy(spark2);
