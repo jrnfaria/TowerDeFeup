@@ -23,8 +23,10 @@
    	 <waves>
 	     <wave>
 	     	<content>
-		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
-		     	<enemy type="FADEUP"><quantity>5</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>2</quantity></enemy>
+		     	<enemy type="FADEUP"><quantity>2</quantity></enemy>
+		     	<enemy type="FEP"><quantity>2</quantity></enemy>
+		     	<enemy type="FMUP"><quantity>2</quantity></enemy>
 	     	</content>
 	     </wave>
 	     <wave>

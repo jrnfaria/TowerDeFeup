@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
 
 		//get Type and quantity
 		for (int h=0; h< enemyNo.Length; h++) {
-			for (int i=0; i< enemyNo[0].Length; i++) {
+			for (int i=0; i< enemyNo[h].Length; i++) {
 				enemyType[h][i] = xml.container.waves [h].content [i].type;
 				enemyNo[h][i] = xml.container.waves [h].content [i].quantity;
 			}
@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	public void SpawnEnemy(){
 		if(l<enemyNo.Length){//wave number
-			if (k < enemyNo[0].Length) {//enemy type number
+			if (k < enemyNo[l].Length) {//enemy type number
 				if (j < enemyNo[l][k]) {//enemy number
 					j++;
 					Instantiate (Resources.Load (enemyType[l][k]), transform.position, Quaternion.identity);
