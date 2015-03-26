@@ -1,9 +1,21 @@
 fileFormatVersion: 2
 guid: f59ae5440f6fe8241824f47a40a7a71c
-timeCreated: 1426953461
+timeCreated: 1427378317
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Enemy_fmup_0
+    21300002: Enemy_fmup_2
+    21300004: Enemy_fmup_3
+    21300006: Enemy_fmup_4
+    21300008: Enemy_fmup_5
+    21300010: Enemy_fmup_6
+    21300012: Enemy_fmup_7
+    21300014: Enemy_fmup_8
+    21300016: Enemy_fmup_1
+    21300018: Enemy_fmup_9
+    21300020: Enemy_fmup_10
+    21300022: Enemy_fmup_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +42,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +60,127 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Enemy_fmup_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 96
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 96
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 64
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 64
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 96
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 64
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy_fmup_11
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
