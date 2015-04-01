@@ -10,8 +10,8 @@ Enemies:
 
 /*Curso-QtdDano-TipoDisparo-VelocidadeRotTorre*/
 Towers:
-- Informática - normal - sequential damage - normal
-- Eletrotecnica - lowDmg - continuos damage - fast
-- Quimica - highDmg - sequential damage - slow
+- Informática - normal - sequential shot - normal
+- Eletrotecnica - lowDmg - continuos shot - fast
+- Quimica - noDmg - sequential shot - normal - reduce enemy speed
 - Minas - highDmg - aoe - slow
-- Civil - null - wall/noDmg-fast
+- Civil - noDmg - wall/noDmg-fast

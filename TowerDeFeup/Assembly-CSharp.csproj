@@ -56,6 +56,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Enemies\MedicBehaviour.cs" />
@@ -65,8 +66,10 @@
      <Compile Include="Assets\Scripts\Start.cs" />
      <Compile Include="Assets\Scripts\Towers\BulletBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\CrackBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\GosmaBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\LCEEMGTowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Towers\MIEQTowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\SparkBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerRangeBehaviour.cs" />

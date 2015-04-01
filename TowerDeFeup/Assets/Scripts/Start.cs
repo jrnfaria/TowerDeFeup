@@ -4,11 +4,10 @@ using System.Collections;
 public class Start : MonoBehaviour {
 
 	public GameObject LoadingImage;
-	public GameObject LoadingText;
 
-	public void LoadScene(int level){
-		LoadingImage.SetActive (true);
-		LoadingText.SetActive (true);
-		Application.LoadLevel(level);
+	public void LoadScene(int scene){
+		if(LoadingImage != null)
+			LoadingImage.SetActive (true);
+		Application.LoadLevel(scene);
 	}
 }
