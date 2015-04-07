@@ -13,11 +13,13 @@ public class MIEQTowerBehaviour : MonoBehaviour
 	public float timeBeetweenShoots;
 	public GameObject gosma;
 	public float distance;
+	private GameController gameCtrl;
 	
 	// Use this for initialization
 	void Start ()
 	{
-		getEnemies ();
+		gameCtrl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController>();
+		enemies=gameCtrl.getEnemies ();
 		
 		Invoke ("CreateBullet", timeBeetweenShoots);
 		
@@ -25,21 +27,13 @@ public class MIEQTowerBehaviour : MonoBehaviour
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
 	}
-	
-	void getEnemies ()
-	{
-		enemies = new List<GameObject> ();
-		
-		foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
-			enemies.Add (enemy);
-		}
-	}
+
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		
-		getEnemies ();
+		enemies=gameCtrl.getEnemies ();
 		
 		if (enemies.Count > 0) {
 			GetNearestEnemy ();

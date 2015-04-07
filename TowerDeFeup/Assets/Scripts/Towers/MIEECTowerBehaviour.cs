@@ -14,32 +14,26 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	private GameObject spark2;
 	public float distance;
 	public float width, height;
+	private GameController gameCtrl;
 
 	// Use this for initialization
 	void Start ()
 	{
-
-		getEnemies ();
+		gameCtrl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController>();
+		enemies=gameCtrl.getEnemies ();
 		
 		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
 	}
 	
-	void getEnemies ()
-	{
-		enemies = new List<GameObject> ();
-		
-		foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
-			enemies.Add (enemy);
-		}
-	}
+
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		
-		getEnemies ();
+		enemies=gameCtrl.getEnemies ();
 		
 		if (enemies.Count > 0) {
 			GameObject oldShooted = shootedEnemy;
