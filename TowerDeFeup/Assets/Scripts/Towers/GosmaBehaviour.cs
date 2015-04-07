@@ -5,6 +5,7 @@ public class GosmaBehaviour : MonoBehaviour {
 	
 	public GameObject enemy;
 	public float speed;
+	public float slow;
 	
 	// Use this for initialization
 	void Start () {
@@ -23,8 +24,8 @@ public class GosmaBehaviour : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Enemy") {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
-			if(other.gameObject.GetComponent<EnemyBehaviour> ().speed-0.2f>0.1f){
-				behaviour.speed = other.gameObject.GetComponent<EnemyBehaviour> ().speed-0.2f;
+			if(other.gameObject.GetComponent<EnemyBehaviour> ().speed-slow>0.1f){
+				behaviour.speed = other.gameObject.GetComponent<EnemyBehaviour> ().speed-slow;
 			}
 			Destroy (gameObject);
 		}

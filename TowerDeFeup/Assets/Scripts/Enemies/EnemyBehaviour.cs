@@ -10,6 +10,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	public int health;
 	public int maxHealth;
 	private int index=0;
+	public int money;
 	
 	// Use this for initialization
 	void Start () {
@@ -59,6 +60,9 @@ public class EnemyBehaviour : MonoBehaviour {
 		else if(transform.position.y>=way.transform.position.y)
 			animator.SetInteger("direction",1);
 	}
-	
+
+	void OnDestroy() {
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (money);
+	}
 }
 

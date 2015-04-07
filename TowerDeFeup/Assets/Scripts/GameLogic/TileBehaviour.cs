@@ -19,7 +19,7 @@ public class TileBehaviour : MonoBehaviour {
 			Instantiate (tower4, transform.position, Quaternion.identity);
 			used = true;
 		} else if (Input.GetMouseButtonDown (1)&&!used) {
-			Instantiate (tower2, transform.position, Quaternion.identity);
+			Instantiate (tower3, transform.position, Quaternion.identity);
 			used=true;
 		}
 
