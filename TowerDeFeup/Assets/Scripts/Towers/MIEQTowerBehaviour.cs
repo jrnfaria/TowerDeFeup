@@ -69,12 +69,15 @@ public class MIEQTowerBehaviour : MonoBehaviour
 		
 		// loop through each tagged object, remembering nearest one found
 		foreach (GameObject enemy in enemies) {
-			Vector3 enemyPos = enemy.transform.position;
-			float distanceSqr = Vector3.Distance(enemyPos, transform.position);
-			
-			if (distanceSqr < nearestDistanceSqr) {
-				nearestObj = enemy;
-				nearestDistanceSqr = distanceSqr;
+			if(enemy!=null)
+			{
+				Vector3 enemyPos = enemy.transform.position;
+				float distanceSqr = Vector3.Distance(enemyPos, transform.position);
+				
+				if (distanceSqr < nearestDistanceSqr) {
+					nearestObj = enemy;
+					nearestDistanceSqr = distanceSqr;
+				}
 			}
 		}
 		shootedEnemy = nearestObj;

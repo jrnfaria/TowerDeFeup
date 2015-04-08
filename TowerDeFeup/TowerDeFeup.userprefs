@@ -1,10 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\level1.xml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Towers\CrackBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" Line="31" Column="5" />
-      <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="57" Column="37" />
-      <File FileName="Assets\Levels\level1.xml" Line="20" Column="41" />
+      <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="65" Column="3" />
+      <File FileName="Assets\Scripts\Towers\TowerBehaviour.cs" Line="16" Column="2" />
+      <File FileName="Assets\Scripts\Towers\LCEEMGTowerBehaviour.cs" Line="79" Column="4" />
+      <File FileName="Assets\Scripts\Towers\MIEQTowerBehaviour.cs" Line="82" Column="4" />
+      <File FileName="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" Line="23" Column="3" />
+      <File FileName="Assets\Scripts\Enemies\MedicBehaviour.cs" Line="38" Column="4" />
+      <File FileName="Assets\Scripts\Towers\CrackBehaviour.cs" Line="37" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

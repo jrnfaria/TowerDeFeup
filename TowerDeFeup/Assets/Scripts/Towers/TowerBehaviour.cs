@@ -55,9 +55,12 @@ public class TowerBehaviour : MonoBehaviour
 	void CreateBullet ()
 	{
 		if (enemies.Count > 0) {
-			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
-				bullet.GetComponent<BulletBehaviour> ().enemy = shootedEnemy;
-				Instantiate (bullet, transform.position, Quaternion.identity);
+			if(shootedEnemy!=null)
+			{
+				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+					bullet.GetComponent<BulletBehaviour> ().enemy = shootedEnemy;
+					Instantiate (bullet, transform.position, Quaternion.identity);
+				}
 			}
 		}
 		Invoke ("CreateBullet", timeBeetweenShoots);
@@ -70,12 +73,15 @@ public class TowerBehaviour : MonoBehaviour
  
 		// loop through each tagged object, remembering nearest one found
 		foreach (GameObject enemy in enemies) {
+			if(enemy!=null)
+			{
 			Vector3 enemyPos = enemy.transform.position;
 			float distanceSqr = Vector3.Distance(enemyPos, transform.position);
  
 			if (distanceSqr < nearestDistanceSqr) {
 				nearestObj = enemy;
 				nearestDistanceSqr = distanceSqr;
+			}
 			}
 		}
 		shootedEnemy = nearestObj;
