@@ -11,13 +11,13 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		money = 0;
-		moneyText.text = "Money:"+money;
+		moneyText.text = "\n\n                  "+money;
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		moneyText.text = "Money:"+money;
+		moneyText.text = "\n\n                  "+money;
 	}
 
 	public void addMoney(int m)

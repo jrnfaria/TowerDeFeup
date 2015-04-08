@@ -1,15 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\TileBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\GameController.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\PlaceTowerGUI.cs" Line="25" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="13" Column="9" />
-      <File FileName="Assets\Scripts\Towers\TowerBehaviour.cs" Line="92" Column="26" />
-      <File FileName="Assets\Scripts\Enemies\MedicBehaviour.cs" Line="62" Column="3" />
-      <File FileName="Assets\Scripts\GameLogic\TileBehaviour.cs" Line="39" Column="2" />
-      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="32" Column="74" />
-      <File FileName="Assets\Scripts\Towers\MIEQTowerBehaviour.cs" Line="98" Column="4" />
-      <File FileName="Assets\Scripts\Towers\LCEEMGTowerBehaviour.cs" Line="61" Column="4" />
+      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="20" Column="51" />
+      <File FileName="Assets\Scripts\GameLogic\PlaceTowerGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Towers\TowerBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\MedicBehaviour.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
