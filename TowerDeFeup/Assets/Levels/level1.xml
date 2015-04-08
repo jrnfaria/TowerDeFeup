@@ -18,6 +18,7 @@
            <tile><x>5</x><y>7</y></tile>
            <tile><x>5</x><y>8</y></tile>
            <tile><x>6</x><y>8</y></tile>
+           <tile><x>7</x><y>8</y></tile>
      </path>
    	
    	 <waves>

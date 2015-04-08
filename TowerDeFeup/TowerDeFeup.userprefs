@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\EnemyBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\level1.xml">
     <Files>
+      <File FileName="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" Line="31" Column="5" />
       <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="57" Column="37" />
+      <File FileName="Assets\Levels\level1.xml" Line="20" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
