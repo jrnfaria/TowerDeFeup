@@ -54,9 +54,12 @@ public class MIEQTowerBehaviour : MonoBehaviour
 	void CreateBullet ()
 	{
 		if (enemies.Count > 0) {
-			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
-				gosma.GetComponent<GosmaBehaviour> ().enemy = shootedEnemy;
-				Instantiate (gosma, transform.position, Quaternion.identity);
+			if(shootedEnemy!=null)
+			{
+				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+					gosma.GetComponent<GosmaBehaviour> ().enemy = shootedEnemy;
+					Instantiate (gosma, transform.position, Quaternion.identity);
+				}
 			}
 		}
 		Invoke ("CreateBullet", timeBeetweenShoots);
@@ -84,12 +87,14 @@ public class MIEQTowerBehaviour : MonoBehaviour
 	}
 	
 	void RotateTower ()
-	{
-		if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
-			Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
-			float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
-			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
+	{	
+		if (shootedEnemy != null) {
+			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+				Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
+				float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
+				Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
+				transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
+			}
 		}
 	}
 }

@@ -89,12 +89,14 @@ public class TowerBehaviour : MonoBehaviour
 
 	void RotateTower ()
 	{
-		if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
-			Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
-			float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
-			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
-		} else
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime); 
+		if (shootedEnemy != null) {
+			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+				Vector3 vectorToTarget = shootedEnemy.transform.position - transform.position;
+				float angle = Mathf.Atan2 (vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
+				Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
+				transform.rotation = Quaternion.RotateTowards (transform.rotation, q, speed * Time.deltaTime); 
+			} else
+				transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime); 
+		}
 	}
 }

@@ -20,8 +20,10 @@ public class PlaceTowerGUI : MonoBehaviour {
 
 	void OnGUI () {
 		// Make a background box
-		GUI.Box(new Rect(wantedPos.x,wantedPos.y,100,90), "Loader Menu");
-		
+		GUI.Box(new Rect(wantedPos.x,wantedPos.y,100,90), "Tower placement");
+
+
+
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 		if(GUI.Button(new Rect(wantedPos.x+10,wantedPos.y+20,80,20), "MIEIC")) {
 			tileScript.setTowerPlacement(1);

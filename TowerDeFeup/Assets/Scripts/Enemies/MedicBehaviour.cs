@@ -48,13 +48,15 @@ public class MedicBehaviour : MonoBehaviour {
 		int maxHealth = 0;
 		
 		foreach (GameObject enemy in enemiesInRange) {
-			
-			health=enemy.GetComponent<EnemyBehaviour>().health;
-			maxHealth=enemy.GetComponent<EnemyBehaviour>().maxHealth;
-			
-			if(health<maxHealth)
-			{
-				enemy.GetComponent<EnemyBehaviour>().health=Mathf.Clamp(health+heal,0,maxHealth);
+			if(enemy!=null)
+				{
+				health=enemy.GetComponent<EnemyBehaviour>().health;
+				maxHealth=enemy.GetComponent<EnemyBehaviour>().maxHealth;
+				
+				if(health<maxHealth)
+				{
+					enemy.GetComponent<EnemyBehaviour>().health=Mathf.Clamp(health+heal,0,maxHealth);
+				}
 			}
 		}
 	}

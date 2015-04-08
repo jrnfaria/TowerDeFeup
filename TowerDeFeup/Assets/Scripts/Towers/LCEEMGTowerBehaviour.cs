@@ -53,9 +53,12 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 	public void CreateBullet ()
 	{
 		if (enemies.Count > 0) {
-			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
-				crack.GetComponent<CrackBehaviour> ().enemy = shootedEnemy;
-				crack2 = Instantiate (crack, transform.position, Quaternion.identity)as GameObject;
+			if(shootedEnemy!=null)
+			{
+				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
+					crack.GetComponent<CrackBehaviour> ().enemy = shootedEnemy;
+					crack2 = Instantiate (crack, transform.position, Quaternion.identity)as GameObject;
+				}
 			}
 		}
 		Invoke("CreateBullet",3);

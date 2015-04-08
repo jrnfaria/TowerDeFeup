@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TileBehaviour : MonoBehaviour {
 
@@ -16,15 +17,30 @@ public class TileBehaviour : MonoBehaviour {
 		gui = GetComponent<PlaceTowerGUI>();
 		gui.enabled = false;
 		towerPlacement = 0;
+
 	}
 	
 	void OnMouseOver(){
 
 		if (Input.GetMouseButtonDown (0)&&!used) {
 			Instantiate (tower4, transform.position, Quaternion.identity);
+			{
 			used = true;
+			closeOthersGUI ();
+			}
 		} else if (Input.GetMouseButtonDown (1)&&!used) {
+			closeOthersGUI ();
 			gui.enabled = true;
+		}
+	}
+
+	void closeOthersGUI ()
+	{
+		GameObject[] tiles = GameObject.FindGameObjectsWithTag ("Tile");
+
+		for(int i=0;i<tiles.Length;i++ )
+		{
+			tiles[i].GetComponent<PlaceTowerGUI>().enabled=false;
 		}
 	}
 
