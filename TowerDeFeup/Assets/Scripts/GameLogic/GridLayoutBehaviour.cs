@@ -25,23 +25,26 @@ public class GridLayoutBehaviour : MonoBehaviour {
 		int offsetY=tilesY/2;
 		string name;
 		
-		for(int x = 0; x < tilesX; x++)
+		for(int y = 0; y < tilesY; y++)
 		{
-			for(int y = 0; y < tilesY; y++)
+			for(int x = 0; x < tilesX; x++)
 			{
 				name=getPath(x,y,container.paths);
 				if(name=="Last"){
 					GameObject obj = (GameObject)Instantiate(feup);
 					obj.transform.position = new Vector3(x-offsetX,y-offsetY,0);
-				}else if(name!=""){
-					GameObject obj = (GameObject)Instantiate(pathTile);
-					obj.transform.position = new Vector3(x-offsetX,y-offsetY,0);
-					obj.name=name;
-				}else{
+				}else if(name==""){
 					GameObject obj = (GameObject)Instantiate(tile);
 					obj.transform.position = new Vector3(x-offsetX,y-offsetY,0);
 				}
 			}
+		}
+
+		for (int i=0; i<container.paths.Count -1; i++) {
+			
+			GameObject obj = (GameObject)Instantiate(pathTile);
+			obj.transform.position = new Vector3(container.paths[i].x-offsetX,container.paths[i].y-offsetY,0);
+			obj.name="Point";
 		}
 	}
 	
