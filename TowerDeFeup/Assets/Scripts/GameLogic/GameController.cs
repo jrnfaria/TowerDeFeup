@@ -5,19 +5,25 @@ using System.Collections.Generic;
 public class GameController : MonoBehaviour {
 
 	private int money;
-	public GUIText moneyText;
+	private int health;
+	public GUIText infoText;
 	private List<GameObject> enemies;
 
 	// Use this for initialization
 	void Start () {
+		health = 20;
 		money = 0;
-		moneyText.text = "\n\n                  "+money;
+		infoText.text = "\n\n                  "+money+"\n\n\n                  "+health;
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		moneyText.text = "\n\n                  "+money;
+		infoText.text = "\n\n                  "+money+"\n\n\n                  "+health;
+	}
+
+	public void setHealth(){
+		health = health - 1;
 	}
 
 	public void addMoney(int m)

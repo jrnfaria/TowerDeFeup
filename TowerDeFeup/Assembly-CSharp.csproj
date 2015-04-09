@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Enemies\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Enemies\MedicBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\BaseBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameLogic\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GameController.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" />
