@@ -55,35 +55,30 @@
    	 <waves>
 	     <wave>
 	     	<content>
-		     	<enemy type="ISEP"><quantity>10</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
 	     	</content>
 	     </wave>
 	     <wave>
 	     	<content>
-		     	<enemy type="ISEP"><quantity>15</quantity></enemy>
 		     	<enemy type="FEP"><quantity>5</quantity></enemy>
 	     	</content>
 	     </wave>
 		 <wave>
 	     	<content>
-				<enemy type="FEP"><quantity>10</quantity></enemy>
 				<enemy type="FADEUP"><quantity>5</quantity></enemy>
-				<enemy type="ISEP"><quantity>5</quantity></enemy>
 	     	</content>
 	     </wave>
 		 <wave>
 	     	<content>
-		     	<enemy type="FEP"><quantity>10</quantity></enemy>
-				<enemy type="FADEUP"><quantity>5</quantity></enemy>
 				<enemy type="FMUP"><quantity>5</quantity></enemy>
 	     	</content>
 	     </wave>
 		 <wave>
 	     	<content>
-		     	<enemy type="FEP"><quantity>15</quantity></enemy>
-				<enemy type="FADEUP"><quantity>10</quantity></enemy>
-				<enemy type="FMUP"><quantity>10</quantity></enemy>
-				<enemy type="ISEP"><quantity>20</quantity></enemy>
+		     	<enemy type="FEP"><quantity>5</quantity></enemy>
+				<enemy type="FADEUP"><quantity>5</quantity></enemy>
+				<enemy type="FMUP"><quantity>5</quantity></enemy>
+				<enemy type="ISEP"><quantity>5</quantity></enemy>
 	     	</content>
 	     </wave>
 	 </waves>   
