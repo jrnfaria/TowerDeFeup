@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game>
+	<tilesX>15</tilesX>
+	<tilesY>15</tilesY>
+     <path>
+           <tile><x>1</x><y>0</y></tile>
+           <tile><x>1</x><y>1</y></tile>
+           <tile><x>1</x><y>2</y></tile>
+           <tile><x>1</x><y>3</y></tile>
+           <tile><x>2</x><y>3</y></tile>
+           <tile><x>3</x><y>3</y></tile>
+           <tile><x>4</x><y>3</y></tile>
+           <tile><x>5</x><y>3</y></tile>
+           <tile><x>6</x><y>3</y></tile>
+           <tile><x>7</x><y>3</y></tile>
+           <tile><x>8</x><y>3</y></tile>
+           <tile><x>9</x><y>3</y></tile>
+           <tile><x>10</x><y>3</y></tile>
+           <tile><x>11</x><y>3</y></tile>
+           <tile><x>12</x><y>3</y></tile>
+           <tile><x>12</x><y>4</y></tile>
+		   <tile><x>12</x><y>5</y></tile>
+		   <tile><x>12</x><y>6</y></tile>
+		   <tile><x>11</x><y>6</y></tile>
+		   <tile><x>10</x><y>6</y></tile>
+		   <tile><x>9</x><y>6</y></tile>
+		   <tile><x>8</x><y>6</y></tile>
+		   <tile><x>7</x><y>6</y></tile>
+		   <tile><x>6</x><y>6</y></tile>
+		   <tile><x>5</x><y>6</y></tile>
+		   <tile><x>4</x><y>6</y></tile>
+		   <tile><x>3</x><y>6</y></tile>
+		   <tile><x>2</x><y>6</y></tile>
+		   <tile><x>1</x><y>6</y></tile>
+		   <tile><x>1</x><y>7</y></tile>
+		   <tile><x>1</x><y>8</y></tile>
+		   <tile><x>1</x><y>9</y></tile>
+		   <tile><x>2</x><y>9</y></tile>
+		   <tile><x>3</x><y>9</y></tile>
+		   <tile><x>4</x><y>9</y></tile>
+		   <tile><x>5</x><y>9</y></tile>
+		   <tile><x>6</x><y>9</y></tile>
+		   <tile><x>7</x><y>9</y></tile>
+		   <tile><x>8</x><y>9</y></tile>
+		   <tile><x>9</x><y>9</y></tile>
+		   <tile><x>10</x><y>9</y></tile>
+		   <tile><x>11</x><y>9</y></tile>
+		   <tile><x>12</x><y>9</y></tile>
+		   <tile><x>12</x><y>10</y></tile>
+		   <tile><x>12</x><y>11</y></tile>
+		   <tile><x>12</x><y>12</y></tile>
+		   <tile><x>12</x><y>13</y></tile>
+		   <tile><x>12</x><y>14</y></tile>		   
+     </path>
+   	
+   	 <waves>
+	     <wave>
+	     	<content>
+		     	<enemy type="ISEP"><quantity>2</quantity></enemy>
+		     	<enemy type="FADEUP"><quantity>2</quantity></enemy>
+		     	<enemy type="FEP"><quantity>2</quantity></enemy>
+		     	<enemy type="FMUP"><quantity>2</quantity></enemy>
+	     	</content>
+	     </wave>
+	     <wave>
+	     	<content>
+		     	<enemy type="FADEUP"><quantity>5</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
+	     	</content>
+	     </wave>
+	 </waves>   
+</game>
