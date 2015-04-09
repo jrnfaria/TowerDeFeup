@@ -7,7 +7,7 @@ public class SparkBehaviour : MonoBehaviour {
 	public GameObject enemy;
 	public float speed;
 
-	private float width, height;
+	private float width;// height;
 	private Vector3 initialPos;
 	
 	// Use this for initialization
@@ -44,7 +44,7 @@ public class SparkBehaviour : MonoBehaviour {
 		SpriteRenderer sr=GetComponent<SpriteRenderer>();
 		if(sr==null) return;
 		width=sr.sprite.bounds.size.x;
-		height=sr.sprite.bounds.size.y;
+		//height=sr.sprite.bounds.size.y;
 	}
 
 	void SetTarget(Vector3 target)

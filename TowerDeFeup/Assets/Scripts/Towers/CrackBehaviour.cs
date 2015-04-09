@@ -12,7 +12,7 @@ public class CrackBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float step = speed * Time.deltaTime;
+		//float step = speed * Time.deltaTime;
 		StartCoroutine(FadeTo(0.0f, 3.0f));
 	}
 	
