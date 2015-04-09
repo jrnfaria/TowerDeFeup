@@ -24,6 +24,13 @@ public class GameController : MonoBehaviour {
 
 	public void setHealth(){
 		health = health - 1;
+		if (health == 0) {
+			
+		}
+	}
+
+	public int getHealth(){
+		return health;
 	}
 
 	public void addMoney(int m)

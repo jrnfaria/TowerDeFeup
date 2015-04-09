@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class BaseBehaviour : MonoBehaviour {
-	
+
+	public GameObject gameover;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -18,12 +20,23 @@ public class BaseBehaviour : MonoBehaviour {
 			Destroy (other.transform.gameObject);
 			Destroy (other.transform.parent.gameObject);
 			setHealth();
+			if(getHealth()==0){
+				Destroy (gameObject);
+				//gameover
+				Instantiate (gameover, transform.position, Quaternion.identity);
+				//Application.LoadLevel(1);
+			}
 		}
 	}
 	
 	void setHealth()
 	{
 		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().setHealth ();
+	}
+
+	public int getHealth()
+	{
+		return GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().getHealth();
 	}
 	
 }
