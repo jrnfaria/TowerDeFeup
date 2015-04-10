@@ -34,6 +34,9 @@ public class CrackBehaviour : MonoBehaviour {
 		{
 			Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha,aValue,t));
 			this.GetComponent<Renderer>().material.color = newColor;
+			if(t>=0.9f){
+				Destroy(this.gameObject);
+			}
 			yield return null;
 		}
 	}

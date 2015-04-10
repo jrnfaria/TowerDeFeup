@@ -57,7 +57,7 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 			{
 				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 					crack.GetComponent<CrackBehaviour> ().enemy = shootedEnemy;
-					 Instantiate (crack, transform.position, Quaternion.identity);
+					Instantiate (crack, transform.position, Quaternion.identity);
 				}
 			}
 		}

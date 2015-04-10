@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\PlaceTowerGUI.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Towers\CrackBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\PlaceTowerGUI.cs" Line="69" Column="1" />
+      <File FileName="Assets\Scripts\Towers\LCEEMGTowerBehaviour.cs" Line="60" Column="6" />
+      <File FileName="Assets\Scripts\Towers\CrackBehaviour.cs" Line="38" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
