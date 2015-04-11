@@ -5,16 +5,27 @@ public class PlaceTowerGUI : MonoBehaviour {
 	
 	private Vector3 wantedPos;
 	private TileBehaviour tileScript;
+
 	public Texture2D textureMIEIC;
 	public Texture2D textureMIEEC;
 	public Texture2D textureLCEEMG;
 	public Texture2D textureMIEQ;
+
+	public int MIEICPrice;
+	public int MIEECPrice;
+	public int LCEEMGPrice;
+	public int MIEQPrice;
+
+	private GameController gCtrl;
 	
 	// Use this for initialization
 	void Start () {
+
 		wantedPos = Camera.main.WorldToScreenPoint(transform.position);
 		wantedPos = new Vector3 (wantedPos.x, Screen.height-wantedPos.y , wantedPos.z);
 		tileScript = GetComponent<TileBehaviour>();
+		gCtrl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
+		Debug.Log (gCtrl.money);
 	}
 	// Update is called once per frame
 	void Update () {
@@ -22,6 +33,7 @@ public class PlaceTowerGUI : MonoBehaviour {
 	}
 	
 	void OnGUI () {
+
 		float rx = Screen.width / 1280.0f; //or whatever with do you want;
 		float ry = Screen.height / 720.0f; //or whatever height do you want;
 		
@@ -40,28 +52,45 @@ public class PlaceTowerGUI : MonoBehaviour {
 		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight),"");
 		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight),"");
 		
-		
+
+
 		GUI.DrawTexture(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,buttonWidht,buttonHeight) , textureMIEIC);
 		if(GUI.Button(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
-			tileScript.setTowerPlacement(1);
+			if(gCtrl.money>=MIEICPrice)
+			{
+				gCtrl.addMoney(-MIEICPrice);
+				tileScript.setTowerPlacement(1);
+			}
 			enabled=false;
 		}
 		
 		GUI.DrawTexture(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,buttonWidht,buttonHeight) , textureMIEEC);
 		if(GUI.Button(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
-			tileScript.setTowerPlacement(2);
+			if(gCtrl.money>=MIEECPrice)
+			{
+				gCtrl.addMoney(-MIEECPrice);
+				tileScript.setTowerPlacement(2);
+			}
 			enabled=false;
 		}
 		
 		GUI.DrawTexture(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight) , textureLCEEMG);
 		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight), "", new GUIStyle())) {
-			tileScript.setTowerPlacement(3);
+			if(gCtrl.money>=LCEEMGPrice)
+			{
+				gCtrl.addMoney(-LCEEMGPrice);
+				tileScript.setTowerPlacement(3);
+			}
 			enabled=false;
 		}
 		
 		GUI.DrawTexture(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight) , textureMIEQ);
 		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
-			tileScript.setTowerPlacement(4);
+			if(gCtrl.money>=MIEQPrice)
+			{
+				gCtrl.addMoney(-MIEQPrice);
+				tileScript.setTowerPlacement(4);
+			}
 			enabled=false;
 		}
 	}

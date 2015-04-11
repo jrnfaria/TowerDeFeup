@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-	private int money;
+	public int money;
 	private int health;
 	public GUIText infoText;
 	private List<GameObject> enemies;
@@ -12,7 +12,6 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		health = 20;
-		money = 0;
 		infoText.text = "\n\n                  "+money+"\n\n\n                  "+health;
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
