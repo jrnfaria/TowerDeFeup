@@ -13,7 +13,12 @@ public class TowerBehaviour : MonoBehaviour
 	public float timeBeetweenShoots;
 	public GameObject bullet;
 	public float distance;
+	public int money;
 	private GameController gameCtrl;
+	private UpgradeTowerGUI gui;
+
+	private int towerLevel;
+	public float improvePercentage;
 
 	// Use this for initialization
 	void Start ()
@@ -26,6 +31,10 @@ public class TowerBehaviour : MonoBehaviour
 		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
+		towerLevel = 1;
+
+		gui = GetComponent<UpgradeTowerGUI>();
+		gui.enabled = false;
 	}
 
 
@@ -39,6 +48,13 @@ public class TowerBehaviour : MonoBehaviour
 		if (enemies.Count > 0) {
 			GetNearestEnemy ();
 			RotateTower ();
+		}
+	}
+
+	void OnMouseOver(){
+		
+		if (Input.GetMouseButtonDown (0)) {
+			gui.enabled = true;
 		}
 	}
 

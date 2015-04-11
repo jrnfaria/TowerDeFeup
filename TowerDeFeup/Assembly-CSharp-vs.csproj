@@ -49,11 +49,12 @@
      <Compile Include="Assets\Scripts\Enemies\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Enemies\MedicBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GUI\PlaceTowerGUI.cs" />
+     <Compile Include="Assets\Scripts\GUI\UpgradeTowerGUI.cs" />
      <Compile Include="Assets\Scripts\GameLogic\BaseBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameLogic\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GameController.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" />
-     <Compile Include="Assets\Scripts\GameLogic\PlaceTowerGUI.cs" />
      <Compile Include="Assets\Scripts\GameLogic\TileBehaviour.cs" />
      <Compile Include="Assets\Scripts\Menu\Close.cs" />
      <Compile Include="Assets\Scripts\Menu\DontDestroy.cs" />
