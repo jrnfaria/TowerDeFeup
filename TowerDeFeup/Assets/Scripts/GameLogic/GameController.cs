@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
 	public int money;
 	private int health;
-	public GUIText infoText;
+	public Text moneyText, healthText;
 	private List<GameObject> enemies;
 
 	// Use this for initialization
 	void Start () {
 		health = 20;
-		infoText.text = "\n\n                  "+money+"\n\n\n                  "+health;
+		moneyText.text = money.ToString();
+		healthText.text = health.ToString();
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		infoText.text = "\n\n                  "+money+"\n\n\n                  "+health;
+		moneyText.text = money.ToString();
+		healthText.text = health.ToString();
 	}
 
 	public void setHealth(){
