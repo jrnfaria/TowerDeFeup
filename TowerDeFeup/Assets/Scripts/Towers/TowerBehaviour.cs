@@ -121,11 +121,12 @@ public class TowerBehaviour : Tower
 			{
 				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 					bullet.GetComponent<BulletBehaviour> ().enemy = shootedEnemy;
-					Instantiate (bullet, transform.position, Quaternion.identity);
+					GameObject b=Instantiate (bullet, transform.position, Quaternion.identity) as GameObject;
+					b.GetComponent<BulletBehaviour>().damage+=(int)(b.GetComponent<BulletBehaviour>().damage*improvePercentage*towerLevel);
 				}
 			}
 		}
-		Invoke ("CreateBullet", timeBeetweenShoots);
+		Invoke ("CreateBullet", timeBeetweenShoots*(1-improvePercentage*(towerLevel-1)));
 	}
 
 	void GetNearestEnemy ()

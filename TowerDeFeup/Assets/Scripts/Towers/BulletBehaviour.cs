@@ -5,6 +5,7 @@ public class BulletBehaviour : MonoBehaviour {
 
 	public GameObject enemy;
 	public float speed;
+	public int damage;
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +24,13 @@ public class BulletBehaviour : MonoBehaviour {
 	{
 	if (other.gameObject.tag == "Enemy") {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
-			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - 20;
+			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - damage;
 			Destroy (gameObject);
 			if(behaviour.health<=0)
+			{
+				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
 				Destroy (other.transform.parent.gameObject);
+			}
 		}
 
 	}

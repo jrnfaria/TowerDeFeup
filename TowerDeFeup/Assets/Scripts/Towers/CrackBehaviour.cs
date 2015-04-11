@@ -22,7 +22,10 @@ public class CrackBehaviour : MonoBehaviour {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
 			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - 200;
 			if(behaviour.health<=0)
+			{
+				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
 				Destroy (other.transform.parent.gameObject);
+			}
 		}
 		
 	}

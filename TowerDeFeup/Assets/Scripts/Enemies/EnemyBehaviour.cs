@@ -61,13 +61,5 @@ public class EnemyBehaviour : MonoBehaviour {
 			animator.SetInteger("direction",1);
 	}
 
-	void OnDestroy() {
-		addMoney ();
-	}
-
-	void addMoney()
-	{
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (money);
-	}
 }
 

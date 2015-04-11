@@ -89,7 +89,12 @@ public class MIEECTowerBehaviour : Tower
 	{
 		rangeScript.setRange (false);
 	}
-	
+
+	void OnDestroy() {
+		DestroyImmediate (spark,true);
+		DestroyImmediate (spark2,true);
+	}
+
 	public void CreateBullet ()
 	{
 		if (enemies.Count > 0) {
