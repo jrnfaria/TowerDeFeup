@@ -9,6 +9,7 @@ public class MIEECTowerBehaviour : Tower
 	public GameObject range;
 	private List<GameObject> enemies = new List<GameObject> ();
 	private GameObject shootedEnemy;
+
 	public float speed;
 	public GameObject spark;
 	private GameObject spark2;

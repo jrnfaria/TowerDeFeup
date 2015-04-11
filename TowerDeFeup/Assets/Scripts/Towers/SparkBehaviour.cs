@@ -6,6 +6,7 @@ public class SparkBehaviour : MonoBehaviour {
 	
 	public GameObject enemy;
 	public float speed;
+	public int damage;
 
 	private float width;// height;
 	private Vector3 initialPos;
@@ -15,7 +16,7 @@ public class SparkBehaviour : MonoBehaviour {
 
 		if (enemy != null) {
 			initialPos=transform.position;
-		}
+		}		
 	}
 	
 	// Update is called once per frame
@@ -32,7 +33,7 @@ public class SparkBehaviour : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "Enemy") {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
-			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - 1;
+			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - damage;
 			if(behaviour.health<=0){
 				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
 				Destroy (gameObject);

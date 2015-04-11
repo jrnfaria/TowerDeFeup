@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Towers\MIEQTowerBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Towers\MIEECTowerBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\UpgradeTowerGUI.cs" Line="49" Column="28" />
-      <File FileName="Assets\Scripts\Towers\TowerBehaviour.cs" Line="52" Column="2" />
-      <File FileName="Assets\Scripts\GameLogic\TileBehaviour.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\Towers\LCEEMGTowerBehaviour.cs" Line="54" Column="2" />
-      <File FileName="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" Line="59" Column="2" />
-      <File FileName="Assets\Scripts\Towers\MIEQTowerBehaviour.cs" Line="55" Column="2" />
+      <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="63" Column="2" />
+      <File FileName="Assets\Scripts\Towers\BulletBehaviour.cs" Line="31" Column="5" />
+      <File FileName="Assets\Scripts\Towers\CrackBehaviour.cs" Line="26" Column="143" />
+      <File FileName="Assets\Scripts\Towers\SparkBehaviour.cs" Line="21" Column="2" />
+      <File FileName="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" Line="104" Column="88" />
+      <File FileName="Assets\Scripts\Towers\TowerBehaviour.cs" Line="41" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
