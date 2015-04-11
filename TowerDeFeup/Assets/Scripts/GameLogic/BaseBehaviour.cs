@@ -24,7 +24,7 @@ public class BaseBehaviour : MonoBehaviour {
 				Destroy (gameObject);
 				//gameover
 				Instantiate (gameover, transform.position, Quaternion.identity);
-				//Application.LoadLevel(1);
+				Application.LoadLevel(13);
 			}
 		}
 	}

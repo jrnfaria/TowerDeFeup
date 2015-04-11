@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\GUI\UpgradeTowerGUI.cs" />
      <Compile Include="Assets\Scripts\GameLogic\BaseBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameLogic\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\FinishConditions.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GameController.cs" />
      <Compile Include="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" />
      <Compile Include="Assets\Scripts\GameLogic\TileBehaviour.cs" />
@@ -69,7 +70,6 @@
      <Compile Include="Assets\Scripts\Towers\SparkBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerRangeBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Utilities\Background.cs" />
      <Compile Include="Assets\Scripts\Utilities\XmlReader.cs" />
      <None Include="Assets\Levels\real_level1.xml" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />

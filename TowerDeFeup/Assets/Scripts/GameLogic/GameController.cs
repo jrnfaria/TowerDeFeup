@@ -33,8 +33,8 @@ public class GameController : MonoBehaviour {
 			value2 = value2 / 10;
 		}while (value2 != 0);
 
-		for (int i=0; i<6-count; i++) {
-			text=text+" ";
+		for (int i=0; i<5-count; i++) {
+			text="0"+text;
 		}
 		return text+value;
 	}
