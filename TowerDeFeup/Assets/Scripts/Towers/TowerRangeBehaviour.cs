@@ -7,16 +7,24 @@ public class TowerRangeBehaviour : MonoBehaviour {
 	private float dist;
 	private GUITexture texture;
 	private bool showRange;
+
+	private float rx;
+	private float ry;
 	
 	void Start () {
 		texture = GetComponent<GUITexture> ();
 		showRange = false;
+		rx = Screen.width / 1280.0f; //or whatever with do you want;
+		ry = Screen.height / 720.0f;
+
+		Debug.Log (rx);
+		Debug.Log (ry);
 	}
 
 	public void setDistance(float d)
 	{
 		dist = d;
-		transform.localScale = new Vector3 (dist/11f,dist*2/11f, 0);
+		transform.localScale = new Vector3 (dist/11f,dist/11f, 0);
 	}
 
 	public void setRange(bool s)

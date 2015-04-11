@@ -36,8 +36,11 @@ public class PlaceTowerGUI : MonoBehaviour {
 		float rx = Screen.width / 1280.0f; //or whatever with do you want;
 		float ry = Screen.height / 720.0f; //or whatever height do you want;
 		
-		float buttonWidht = 50 * rx;
-		float buttonHeight = 50 * ry;
+		float buttonWidth = 30 * rx;
+		float buttonHeight = 30 * ry;
+
+		float boxWidth = 50 * rx;
+		float boxHeight = 50 * ry;
 		
 		float offsetX1 = 75 * rx;
 		float offsetX2 = 25 * rx;
@@ -46,15 +49,16 @@ public class PlaceTowerGUI : MonoBehaviour {
 		float offsetY2 = 25 * ry;
 		
 		// Make a background box
-		GUI.Box(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,buttonWidht,buttonHeight),"");
-		GUI.Box(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,buttonWidht,buttonHeight),"");
-		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight),"");
-		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight),"");
+		GUI.Box(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,boxWidth,boxHeight),"");
+		GUI.Box(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,boxWidth,boxHeight),"");
+		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,boxWidth,boxHeight),"");
+		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,boxWidth,boxHeight),"");
 		
 
 
-		GUI.DrawTexture(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,buttonWidht,buttonHeight) , textureMIEIC);
-		if(GUI.Button(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
+		GUI.DrawTexture(new Rect(10 * rx+wantedPos.x-offsetX1,wantedPos.y-offsetY2,buttonWidth,buttonHeight) , textureMIEIC);
+		GUI.Label(new Rect(15 * rx+wantedPos.x-offsetX1,30*ry+wantedPos.y-offsetY2,50*rx,20*ry),MIEICPrice.ToString());
+		if(GUI.Button(new Rect(wantedPos.x-offsetX1,wantedPos.y-offsetY2,boxWidth,boxHeight),"", new GUIStyle())) {
 			if(gCtrl.money>=MIEICPrice)
 			{
 				gCtrl.addMoney(-MIEICPrice);
@@ -63,8 +67,9 @@ public class PlaceTowerGUI : MonoBehaviour {
 			enabled=false;
 		}
 		
-		GUI.DrawTexture(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,buttonWidht,buttonHeight) , textureMIEEC);
-		if(GUI.Button(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
+		GUI.DrawTexture(new Rect(10 * rx+wantedPos.x+offsetX2,wantedPos.y-offsetY2,buttonWidth,buttonHeight) , textureMIEEC);
+		GUI.Label(new Rect(15 * rx+wantedPos.x+offsetX2,30*ry+wantedPos.y-offsetY2,50*rx,20*ry),MIEECPrice.ToString());
+		if(GUI.Button(new Rect(wantedPos.x+offsetX2,wantedPos.y-offsetY2,boxWidth,boxHeight), "", new GUIStyle())) {
 			if(gCtrl.money>=MIEECPrice)
 			{
 				gCtrl.addMoney(-MIEECPrice);
@@ -73,8 +78,9 @@ public class PlaceTowerGUI : MonoBehaviour {
 			enabled=false;
 		}
 		
-		GUI.DrawTexture(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight) , textureLCEEMG);
-		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight), "", new GUIStyle())) {
+		GUI.DrawTexture(new Rect(10 * rx+wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidth,buttonHeight) , textureLCEEMG);
+		GUI.Label(new Rect(15 * rx+wantedPos.x-offsetX2,30*ry+wantedPos.y-offsetY1,50*rx,20*ry),LCEEMGPrice.ToString());
+		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,boxWidth,boxHeight), "", new GUIStyle())) {
 			if(gCtrl.money>=LCEEMGPrice)
 			{
 				gCtrl.addMoney(-LCEEMGPrice);
@@ -83,8 +89,9 @@ public class PlaceTowerGUI : MonoBehaviour {
 			enabled=false;
 		}
 		
-		GUI.DrawTexture(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight) , textureMIEQ);
-		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
+		GUI.DrawTexture(new Rect(10 * rx+wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidth,buttonHeight) , textureMIEQ);
+		GUI.Label(new Rect(15 * rx+wantedPos.x-offsetX2,30*ry+wantedPos.y+offsetY2,50*rx,20*ry),MIEQPrice.ToString());
+		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,boxWidth,boxHeight), "", new GUIStyle())) {
 			if(gCtrl.money>=MIEQPrice)
 			{
 				gCtrl.addMoney(-MIEQPrice);
