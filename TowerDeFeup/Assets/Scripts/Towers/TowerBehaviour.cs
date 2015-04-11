@@ -2,7 +2,35 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class TowerBehaviour : MonoBehaviour
+abstract public class Tower:MonoBehaviour {
+
+
+	public virtual void upgrade()
+	{
+	}
+
+	public virtual int getTowerLevel()
+	{
+		return 0;
+	}
+ 
+	public void closeInterfaces()
+	{
+		GameObject[] tiles = GameObject.FindGameObjectsWithTag ("Tile");
+		for(int i=0;i<tiles.Length;i++ )
+		{
+			tiles[i].GetComponent<PlaceTowerGUI>().enabled=false;
+		}
+
+		GameObject[] towers = GameObject.FindGameObjectsWithTag ("Tower");
+		for(int i=0;i<towers.Length;i++ )
+		{
+			towers[i].GetComponent<UpgradeTowerGUI>().enabled=false;
+		}
+	}
+ }
+ 
+public class TowerBehaviour : Tower
 {
 
 	private TowerRangeBehaviour rangeScript;
@@ -17,8 +45,11 @@ public class TowerBehaviour : MonoBehaviour
 
 	//upgrade tower
 	private int towerLevel;
-	public float improvePercentage;
 	private UpgradeTowerGUI gui;
+	public Sprite lvl2;
+	public Sprite lvl3;
+	public float improvePercentage;
+	
 
 	// Use this for initialization
 	void Start ()
@@ -37,6 +68,28 @@ public class TowerBehaviour : MonoBehaviour
 		gui.enabled = false;
 	}
 
+	public override void upgrade()
+	{
+		towerLevel++;
+		if(towerLevel==2)
+			GetComponent<SpriteRenderer> ().sprite = lvl2;
+		else if(towerLevel==3)
+			GetComponent<SpriteRenderer> ().sprite = lvl3;
+	}
+
+	public override int getTowerLevel()
+	{
+		return towerLevel;
+	}
+
+	void OnMouseOver(){
+		
+		if (Input.GetMouseButtonDown (0)) {
+			closeInterfaces();
+			gui.enabled = true;
+		}
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -49,12 +102,7 @@ public class TowerBehaviour : MonoBehaviour
 		}
 	}
 
-	void OnMouseOver(){
-		
-		if (Input.GetMouseButtonDown (0)) {
-			gui.enabled = true;
-		}
-	}
+	
 
 	void OnMouseEnter ()
 	{
