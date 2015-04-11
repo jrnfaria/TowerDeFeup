@@ -10,6 +10,7 @@ public class LCEEMGTowerBehaviour : Tower
 	private List<GameObject> enemies = new List<GameObject> ();
 	private GameObject shootedEnemy;
 	public float speed;
+	public float timeBeetweenShoots=3f;
 	public GameObject crack;
 	private GameObject crack2;
 	public float distance;
@@ -36,6 +37,7 @@ public class LCEEMGTowerBehaviour : Tower
 
 		gui = GetComponent<UpgradeTowerGUI>();
 		gui.enabled = false;
+		towerLevel = 1;
 	}
 
 	
@@ -70,10 +72,10 @@ public class LCEEMGTowerBehaviour : Tower
 	public override void upgrade()
 	{
 		towerLevel++;
-		/*if(towerLevel==2)
-			GetComponent<SpriteRenderer> ().sprite = lvl2;
+		if(towerLevel==2)
+			GetComponent<Animator> ().SetInteger("lvl",2);
 		else if(towerLevel==3)
-			GetComponent<SpriteRenderer> ().sprite = lvl3;*/
+			GetComponent<Animator> ().SetInteger("lvl",3);
 	}
 	
 	public override int getTowerLevel()
@@ -88,11 +90,12 @@ public class LCEEMGTowerBehaviour : Tower
 			{
 				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 					crack.GetComponent<CrackBehaviour> ().enemy = shootedEnemy;
-					Instantiate (crack, transform.position, Quaternion.identity);
+					GameObject c= Instantiate(crack, transform.position, Quaternion.identity) as GameObject;
+					c.GetComponent<CrackBehaviour>().damage+=(int)(c.GetComponent<CrackBehaviour>().damage*improvePercentage*(towerLevel-1));
 				}
 			}
 		}
-		Invoke("CreateBullet",3);
+		Invoke("CreateBullet",timeBeetweenShoots*(1-(improvePercentage*(towerLevel-1))));
 	}
 	
 	void GetNearestEnemy ()

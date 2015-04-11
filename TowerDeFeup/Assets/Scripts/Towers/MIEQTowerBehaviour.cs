@@ -93,7 +93,8 @@ public class MIEQTowerBehaviour : Tower
 			{
 				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 					gosma.GetComponent<GosmaBehaviour> ().enemy = shootedEnemy;
-					Instantiate (gosma, transform.position, Quaternion.identity);
+					GameObject g= Instantiate(gosma, transform.position, Quaternion.identity) as GameObject;
+					g.GetComponent<GosmaBehaviour>().slow*=towerLevel;
 				}
 			}
 		}

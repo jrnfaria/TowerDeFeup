@@ -101,6 +101,7 @@ public class MIEECTowerBehaviour : Tower
 			if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 				spark.GetComponent<SparkBehaviour> ().enemy = shootedEnemy;
 				spark2 = Instantiate (spark, transform.position, Quaternion.identity)as GameObject;
+				spark2.GetComponent<SparkBehaviour> ().damage=towerLevel;
 			}else{
 				Invoke("CreateBullet",0.1f);
 			}

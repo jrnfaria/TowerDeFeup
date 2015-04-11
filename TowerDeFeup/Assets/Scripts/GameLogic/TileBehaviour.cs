@@ -27,21 +27,26 @@ public class TileBehaviour : MonoBehaviour {
 			Instantiate (tower4, transform.position, Quaternion.identity);
 			{
 			used = true;
-			closeOthersGUI ();
+			closeInterfaces ();
 			}
 		} else if (Input.GetMouseButtonDown (1)&&!used) {
-			closeOthersGUI ();
+			closeInterfaces ();
 			gui.enabled = true;
 		}
 	}
 
-	void closeOthersGUI ()
+	public void closeInterfaces()
 	{
 		GameObject[] tiles = GameObject.FindGameObjectsWithTag ("Tile");
-
 		for(int i=0;i<tiles.Length;i++ )
 		{
 			tiles[i].GetComponent<PlaceTowerGUI>().enabled=false;
+		}
+		
+		GameObject[] towers = GameObject.FindGameObjectsWithTag ("Tower");
+		for(int i=0;i<towers.Length;i++ )
+		{
+			towers[i].GetComponent<UpgradeTowerGUI>().enabled=false;
 		}
 	}
 

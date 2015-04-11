@@ -5,6 +5,7 @@ public class CrackBehaviour : MonoBehaviour {
 	
 	public GameObject enemy;
 	public float speed;
+	public int damage=200;
 	
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class CrackBehaviour : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Enemy") {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
-			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - 200;
+			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - damage;
 			if(behaviour.health<=0)
 			{
 				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
