@@ -15,6 +15,8 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 	public float distance;
 	public float width, height;
 	private GameController gameCtrl;
+
+	private UpgradeTowerGUI gui;
 	
 	// Use this for initialization
 	void Start ()
@@ -26,6 +28,9 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
+
+		gui = GetComponent<UpgradeTowerGUI>();
+		gui.enabled = false;
 	}
 
 	
@@ -39,7 +44,14 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 			GetNearestEnemy ();
 		}
 	}
-	
+
+	void OnMouseOver(){
+		
+		if (Input.GetMouseButtonDown (0)) {
+			gui.enabled = true;
+		}
+	}
+
 	void OnMouseEnter ()
 	{
 		rangeScript.setRange (true);

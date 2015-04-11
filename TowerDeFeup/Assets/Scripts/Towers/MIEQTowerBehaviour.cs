@@ -14,7 +14,9 @@ public class MIEQTowerBehaviour : MonoBehaviour
 	public GameObject gosma;
 	public float distance;
 	private GameController gameCtrl;
-	
+
+	private UpgradeTowerGUI gui;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,6 +28,9 @@ public class MIEQTowerBehaviour : MonoBehaviour
 		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
+
+		gui = GetComponent<UpgradeTowerGUI>();
+		gui.enabled = false;
 	}
 
 	
@@ -40,7 +45,14 @@ public class MIEQTowerBehaviour : MonoBehaviour
 			RotateTower ();
 		}
 	}
-	
+
+	void OnMouseOver(){
+		
+		if (Input.GetMouseButtonDown (0)) {
+			gui.enabled = true;
+		}
+	}
+
 	void OnMouseEnter ()
 	{
 		rangeScript.setRange (true);

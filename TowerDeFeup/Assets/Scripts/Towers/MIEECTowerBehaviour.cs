@@ -16,6 +16,7 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	public float width, height;
 	private GameController gameCtrl;
 
+	private UpgradeTowerGUI gui;
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,6 +26,9 @@ public class MIEECTowerBehaviour : MonoBehaviour
 		rangeScript = range.GetComponent<TowerRangeBehaviour> ();
 		rangeScript.setDistance (distance);
 		rangeScript.setPosition (transform);
+
+		gui = GetComponent<UpgradeTowerGUI>();
+		gui.enabled = false;
 	}
 	
 
@@ -45,7 +49,14 @@ public class MIEECTowerBehaviour : MonoBehaviour
 			}
 		}
 	}
-	
+
+	void OnMouseOver(){
+		
+		if (Input.GetMouseButtonDown (0)) {
+			gui.enabled = true;
+		}
+	}
+
 	void OnMouseEnter ()
 	{
 		rangeScript.setRange (true);
