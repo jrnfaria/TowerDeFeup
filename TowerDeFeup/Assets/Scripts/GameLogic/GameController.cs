@@ -6,29 +6,41 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
 	public int money;
-	private int health;
-	public Text moneyText, healthText;
+	public int health;
+	public Texture2D moneyTexture, healthTexture;
 	private List<GameObject> enemies;
 
 	// Use this for initialization
 	void Start () {
-		health = 20;
-		moneyText.text = money.ToString();
-		healthText.text = health.ToString();
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		moneyText.text = money.ToString();
-		healthText.text = health.ToString();
+	}
+
+	void OnGUI () {
+		GUI.Box (new Rect (10,10,100,50), new GUIContent(getSpaces(money), moneyTexture));
+		GUI.Box (new Rect (10,70,100,50), new GUIContent(getSpaces(health), healthTexture));
+	}
+
+	private string getSpaces(int value){
+		int count = 0;
+		string text="";
+		int value2 = value;
+		do{
+			count = count + 1;
+			value2 = value2 / 10;
+		}while (value2 != 0);
+
+		for (int i=0; i<6-count; i++) {
+			text=text+" ";
+		}
+		return text+value;
 	}
 
 	public void setHealth(){
 		health = health - 1;
-		if (health == 0) {
-			
-		}
 	}
 
 	public int getHealth(){

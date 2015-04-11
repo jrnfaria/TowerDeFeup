@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Towers\SparkBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Towers\TowerRangeBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Utilities\Background.cs" />
      <Compile Include="Assets\Scripts\Utilities\XmlReader.cs" />
      <None Include="Assets\Levels\real_level1.xml" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
