@@ -8,9 +8,10 @@ public class TileBehaviour : MonoBehaviour {
 	public GameObject tower2;
 	public GameObject tower3;
 	public GameObject tower4;
-	private bool used=false;
+	public bool used=false;
 	private PlaceTowerGUI gui;
 	private int towerPlacement;
+	private GameObject tower;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +45,12 @@ public class TileBehaviour : MonoBehaviour {
 		}
 	}
 
+	public void setUsed(bool b)
+	{
+		used = b;
+		towerPlacement = 0;
+	}
+
 	public void setTowerPlacement(int t)
 	{
 		towerPlacement = t;
@@ -52,19 +59,23 @@ public class TileBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (towerPlacement == 1 && !used) {
-			Instantiate (tower1, transform.position, Quaternion.identity);
+			tower=Instantiate (tower1, transform.position, Quaternion.identity) as GameObject;
+			tower.transform.parent=transform;
 			used=true;
 		}
 		else if (towerPlacement == 2 && !used) {
-			Instantiate (tower2, transform.position, Quaternion.identity);
+			tower=Instantiate (tower2, transform.position, Quaternion.identity)as GameObject;
+			tower.transform.parent=transform;
 			used=true;
 		}
 		else if (towerPlacement == 3 && !used) {
-			Instantiate (tower3, transform.position, Quaternion.identity);
+			tower=Instantiate (tower3, transform.position, Quaternion.identity)as GameObject;
+			tower.transform.parent=transform;
 			used=true;
 		}
 		else if (towerPlacement == 4 && !used) {
-			Instantiate (tower4, transform.position, Quaternion.identity);
+			tower=Instantiate (tower4, transform.position, Quaternion.identity)as GameObject;
+			tower.transform.parent=transform;
 			used=true;
 		}
 	}

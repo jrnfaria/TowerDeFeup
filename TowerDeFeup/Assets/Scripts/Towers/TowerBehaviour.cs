@@ -13,12 +13,12 @@ public class TowerBehaviour : MonoBehaviour
 	public float timeBeetweenShoots;
 	public GameObject bullet;
 	public float distance;
-	public int money;
 	private GameController gameCtrl;
-	private UpgradeTowerGUI gui;
 
+	//upgrade tower
 	private int towerLevel;
 	public float improvePercentage;
+	private UpgradeTowerGUI gui;
 
 	// Use this for initialization
 	void Start ()
@@ -36,8 +36,6 @@ public class TowerBehaviour : MonoBehaviour
 		gui = GetComponent<UpgradeTowerGUI>();
 		gui.enabled = false;
 	}
-
-
 
 	// Update is called once per frame
 	void Update ()

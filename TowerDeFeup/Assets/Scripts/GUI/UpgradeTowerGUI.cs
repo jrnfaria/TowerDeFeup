@@ -7,13 +7,17 @@ public class UpgradeTowerGUI : MonoBehaviour {
 	public Texture2D textureUpgrade;
 	public Texture2D textureSell;
 
+	public int money;
+
+	private GameController gCtrl;
+
 	// Use this for initialization
 	void Start () {
 		wantedPos = Camera.main.WorldToScreenPoint(transform.position);
 		wantedPos = new Vector3 (wantedPos.x, Screen.height-wantedPos.y , wantedPos.z);
-		//tileScript = GetComponent<TileBehaviour>();
+		gCtrl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 	}
-	
+
 	void OnGUI () {
 		float rx = Screen.width / 1280.0f; //or whatever with do you want;
 		float ry = Screen.height / 720.0f; //or whatever height do you want;
@@ -31,11 +35,18 @@ public class UpgradeTowerGUI : MonoBehaviour {
 
 		GUI.DrawTexture(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight) , textureUpgrade);
 		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y-offsetY1,buttonWidht,buttonHeight), "", new GUIStyle())) {
+			if(money>=gCtrl.money)
+			{
+
+			}
 			enabled=false;
 		}
 		
 		GUI.DrawTexture(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight) , textureSell);
 		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidht,buttonHeight), "", new GUIStyle())) {
+			transform.root.GetComponent<TileBehaviour>().SendMessage("setUsed",false);
+			Destroy (transform.parent.gameObject);
+			gCtrl.addMoney(money/2);
 			enabled=false;
 		}
 	}

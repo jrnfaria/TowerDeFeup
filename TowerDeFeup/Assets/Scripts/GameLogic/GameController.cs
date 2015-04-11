@@ -37,6 +37,8 @@ public class GameController : MonoBehaviour {
 		money = m + money;
 	}
 
+
+
 	void calcEnemies ()
 	{
 		enemies = new List<GameObject> ();

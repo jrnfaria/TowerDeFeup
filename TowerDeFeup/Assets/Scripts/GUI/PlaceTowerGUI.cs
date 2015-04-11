@@ -25,7 +25,6 @@ public class PlaceTowerGUI : MonoBehaviour {
 		wantedPos = new Vector3 (wantedPos.x, Screen.height-wantedPos.y , wantedPos.z);
 		tileScript = GetComponent<TileBehaviour>();
 		gCtrl = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
-		Debug.Log (gCtrl.money);
 	}
 	// Update is called once per frame
 	void Update () {
