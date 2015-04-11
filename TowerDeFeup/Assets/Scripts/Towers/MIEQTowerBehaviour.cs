@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MIEQTowerBehaviour : MonoBehaviour
+public class MIEQTowerBehaviour : Tower
 {
 	
 	private TowerRangeBehaviour rangeScript;
@@ -15,7 +15,12 @@ public class MIEQTowerBehaviour : MonoBehaviour
 	public float distance;
 	private GameController gameCtrl;
 
+	//upgrade tower
+	private int towerLevel;
 	private UpgradeTowerGUI gui;
+	public Sprite lvl2;
+	public Sprite lvl3;
+	public float improvePercentage;
 
 	// Use this for initialization
 	void Start ()
@@ -31,6 +36,7 @@ public class MIEQTowerBehaviour : MonoBehaviour
 
 		gui = GetComponent<UpgradeTowerGUI>();
 		gui.enabled = false;
+		towerLevel = 1;
 	}
 
 	
@@ -46,9 +52,12 @@ public class MIEQTowerBehaviour : MonoBehaviour
 		}
 	}
 
+
+
 	void OnMouseOver(){
 		
 		if (Input.GetMouseButtonDown (0)) {
+			closeInterfaces();
 			gui.enabled = true;
 		}
 	}
@@ -62,7 +71,21 @@ public class MIEQTowerBehaviour : MonoBehaviour
 	{
 		rangeScript.setRange (false);
 	}
-	
+
+	public override void upgrade()
+	{
+		towerLevel++;
+		if(towerLevel==2)
+			GetComponent<SpriteRenderer> ().sprite = lvl2;
+		else if(towerLevel==3)
+			GetComponent<SpriteRenderer> ().sprite = lvl3;
+	}
+
+	public override int getTowerLevel()
+	{
+		return towerLevel;
+	}
+
 	void CreateBullet ()
 	{
 		if (enemies.Count > 0) {

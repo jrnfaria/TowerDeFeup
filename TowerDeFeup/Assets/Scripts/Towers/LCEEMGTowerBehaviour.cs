@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class LCEEMGTowerBehaviour : MonoBehaviour
+public class LCEEMGTowerBehaviour : Tower
 {
 	
 	private TowerRangeBehaviour rangeScript;
@@ -16,7 +16,12 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 	public float width, height;
 	private GameController gameCtrl;
 
+	//upgrade tower
+	private int towerLevel;
 	private UpgradeTowerGUI gui;
+	public Sprite lvl2;
+	public Sprite lvl3;
+	public float improvePercentage;
 	
 	// Use this for initialization
 	void Start ()
@@ -61,7 +66,21 @@ public class LCEEMGTowerBehaviour : MonoBehaviour
 	{
 		rangeScript.setRange (false);
 	}
+
+	public override void upgrade()
+	{
+		towerLevel++;
+		/*if(towerLevel==2)
+			GetComponent<SpriteRenderer> ().sprite = lvl2;
+		else if(towerLevel==3)
+			GetComponent<SpriteRenderer> ().sprite = lvl3;*/
+	}
 	
+	public override int getTowerLevel()
+	{
+		return towerLevel;
+	}
+
 	public void CreateBullet ()
 	{
 		if (enemies.Count > 0) {

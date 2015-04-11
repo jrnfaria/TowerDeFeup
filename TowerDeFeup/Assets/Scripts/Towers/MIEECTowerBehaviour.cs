@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MIEECTowerBehaviour : MonoBehaviour
+public class MIEECTowerBehaviour : Tower
 {
 	
 	private TowerRangeBehaviour rangeScript;
@@ -16,7 +16,14 @@ public class MIEECTowerBehaviour : MonoBehaviour
 	public float width, height;
 	private GameController gameCtrl;
 
+	//upgrade tower
+	private int towerLevel;
 	private UpgradeTowerGUI gui;
+	public Sprite lvl2;
+	public Sprite lvl3;
+	public float improvePercentage;
+
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -29,6 +36,7 @@ public class MIEECTowerBehaviour : MonoBehaviour
 
 		gui = GetComponent<UpgradeTowerGUI>();
 		gui.enabled = false;
+		towerLevel = 1;
 	}
 	
 
@@ -50,9 +58,24 @@ public class MIEECTowerBehaviour : MonoBehaviour
 		}
 	}
 
+	public override void upgrade()
+	{
+		towerLevel++;
+		if(towerLevel==2)
+			GetComponent<SpriteRenderer> ().sprite = lvl2;
+		else if(towerLevel==3)
+			GetComponent<SpriteRenderer> ().sprite = lvl3;
+	}
+
+	public override int getTowerLevel()
+	{
+		return towerLevel;
+	}
+
 	void OnMouseOver(){
 		
 		if (Input.GetMouseButtonDown (0)) {
+			closeInterfaces();
 			gui.enabled = true;
 		}
 	}
