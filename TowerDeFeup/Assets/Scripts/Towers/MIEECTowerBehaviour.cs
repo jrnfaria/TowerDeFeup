@@ -22,7 +22,6 @@ public class MIEECTowerBehaviour : Tower
 	private UpgradeTowerGUI gui;
 	public Sprite lvl2;
 	public Sprite lvl3;
-	public float improvePercentage;
 
 
 	// Use this for initialization
@@ -62,10 +61,13 @@ public class MIEECTowerBehaviour : Tower
 	public override void upgrade()
 	{
 		towerLevel++;
-		if(towerLevel==2)
+		if (towerLevel == 2) {
 			GetComponent<SpriteRenderer> ().sprite = lvl2;
-		else if(towerLevel==3)
+			spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
+		} else if (towerLevel == 3) {
 			GetComponent<SpriteRenderer> ().sprite = lvl3;
+			spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
+		}
 	}
 
 	public override int getTowerLevel()
@@ -102,7 +104,7 @@ public class MIEECTowerBehaviour : Tower
 				if (Vector3.Distance (shootedEnemy.transform.position, transform.position) <= distance) {
 					spark.GetComponent<SparkBehaviour> ().enemy = shootedEnemy;
 					spark2 = Instantiate (spark, transform.position, Quaternion.identity)as GameObject;
-					spark2.GetComponent<SparkBehaviour> ().damage = towerLevel;
+					spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
 				} else {
 					Invoke ("CreateBullet", 0.1f);
 				}

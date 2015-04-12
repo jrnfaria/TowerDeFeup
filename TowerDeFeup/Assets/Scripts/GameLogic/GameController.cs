@@ -26,8 +26,6 @@ public class GameController : MonoBehaviour {
 
 	void OnGUI () {
 		float width=Screen.width/1366, height=Screen.height/597;
-		Debug.Log (Screen.width+"-");
-		//Debug.Log ();
 
 		GUI.Box (new Rect (10*width,10*height,100*width,50*height), new GUIContent(getSpaces(money), moneyTexture));
 		GUI.Box (new Rect (10*width,70*height,100*width,50*height), new GUIContent(getSpaces(health), healthTexture));

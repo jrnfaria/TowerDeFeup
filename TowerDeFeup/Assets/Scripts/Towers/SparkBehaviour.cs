@@ -15,6 +15,7 @@ public class SparkBehaviour : MonoBehaviour {
 	void Start () {
 
 		if (enemy != null) {
+			Debug.Log("");
 			initialPos=transform.position;
 		}		
 	}
@@ -32,6 +33,7 @@ public class SparkBehaviour : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "Enemy") {
+			Debug.Log ("damage="+damage);
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
 			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - damage;
 			if(behaviour.health<=0&&!behaviour.isDead()){
