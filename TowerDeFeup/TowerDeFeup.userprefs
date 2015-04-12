@@ -1,17 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\real_level1.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\GameController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Towers\SparkBehaviour.cs" Line="41" Column="29" />
-      <File FileName="Assets\Levels\real_level1.xml" Line="114" Column="41" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\Close.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Menu\Start.cs" Line="11" Column="32" />
-      <File FileName="Assets\Scripts\Menu\Close.cs" Line="9" Column="3" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Towers\MIEECTowerBehaviour.cs" Line="109" Column="5" />
+      <File FileName="Assets\Scripts\Towers\SparkBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="36" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
