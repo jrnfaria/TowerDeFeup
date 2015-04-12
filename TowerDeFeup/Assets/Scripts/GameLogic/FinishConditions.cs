@@ -8,10 +8,10 @@ public class FinishConditions : MonoBehaviour {
 	void OnGUI(){
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), background);
 
-		float bWidth=200*Screen.width/1366, bHeight=60*Screen.height/768;
-		if(GUI.Button(new Rect(Screen.width/2-bWidth/2,350,bWidth,bHeight),"Play again"))
+		float bWidth=200*Screen.width/1366, bHeight=50*Screen.height/597;
+		if(GUI.Button(new Rect(Screen.width/2-bWidth/2,350*Screen.height/597,bWidth,bHeight),"Play again"))
 			Application.LoadLevel(2);
-		if(GUI.Button(new Rect(Screen.width/2-bWidth/2,420,bWidth,bHeight),"Go to menu"))
+		if(GUI.Button(new Rect(Screen.width/2-bWidth/2,420*Screen.height/597,bWidth,bHeight),"Go to menu"))
 			Application.LoadLevel(1);
 	}
 }
