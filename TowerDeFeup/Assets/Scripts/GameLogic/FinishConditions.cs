@@ -12,6 +12,6 @@ public class FinishConditions : MonoBehaviour {
 		if(GUI.Button(new Rect(Screen.width/2-bWidth/2,350*Screen.height/597,bWidth,bHeight),"Play again"))
 			Application.LoadLevel(2);
 		if(GUI.Button(new Rect(Screen.width/2-bWidth/2,420*Screen.height/597,bWidth,bHeight),"Go to menu"))
-			Application.LoadLevel(1);
+			Application.LoadLevel(0);
 	}
 }

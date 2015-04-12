@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -37,20 +38,22 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	public void SpawnEnemy(){
-		if(l<enemyNo.Length){//wave number
-			if (k < enemyNo[l].Length) {//enemy type number
-				if (j < enemyNo[l][k]) {//enemy number
+		if (l < enemyNo.Length) {//wave number
+			if (k < enemyNo [l].Length) {//enemy type number
+				if (j < enemyNo [l] [k]) {//enemy number
 					j++;
-					Instantiate (Resources.Load (enemyType[l][k]), transform.position, Quaternion.identity);
-				}else{
+					Instantiate (Resources.Load (enemyType [l] [k]), transform.position, Quaternion.identity);
+				} else {
 					k++;
-					j=0;
+					j = 0;
 				}
-			}else if(GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().getEnemies().Count==0) {
+			} else if (GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().getEnemies ().Count == 0) {
 				l++;
-				k=0;
+				k = 0;
 			}
 			Invoke ("SpawnEnemy", 0.5f);
+		} else if (l == enemyNo.Length) {
+			Application.LoadLevel(14);
 		}
 	}
 }
