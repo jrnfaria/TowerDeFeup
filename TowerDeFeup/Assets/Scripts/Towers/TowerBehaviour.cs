@@ -71,10 +71,11 @@ public class TowerBehaviour : Tower
 	public override void upgrade()
 	{
 		towerLevel++;
-		if(towerLevel==2)
+		if (towerLevel == 2) {
 			GetComponent<SpriteRenderer> ().sprite = lvl2;
-		else if(towerLevel==3)
+		} else if (towerLevel == 3) {
 			GetComponent<SpriteRenderer> ().sprite = lvl3;
+		}
 	}
 
 	public override int getTowerLevel()

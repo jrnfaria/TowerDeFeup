@@ -14,6 +14,9 @@ public class UpgradeTowerGUI : MonoBehaviour {
 	//working with every tower
 	private Tower towerSript;
 
+	//audio
+	public AudioSource audio;
+
 	// Use this for initialization
 	void Start () {
 		wantedPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -45,6 +48,7 @@ public class UpgradeTowerGUI : MonoBehaviour {
 				if (gCtrl.money >= money) {
 					towerSript.upgrade ();
 					gCtrl.addMoney (-money);
+					audio.Play();
 				}
 				enabled = false;
 			}
