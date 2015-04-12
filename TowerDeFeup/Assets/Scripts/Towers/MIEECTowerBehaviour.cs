@@ -61,12 +61,12 @@ public class MIEECTowerBehaviour : Tower
 	public override void upgrade()
 	{
 		towerLevel++;
+		if(spark2!=null)
+			spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
 		if (towerLevel == 2) {
 			GetComponent<SpriteRenderer> ().sprite = lvl2;
-			spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
 		} else if (towerLevel == 3) {
 			GetComponent<SpriteRenderer> ().sprite = lvl3;
-			spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
 		}
 	}
 
@@ -106,6 +106,7 @@ public class MIEECTowerBehaviour : Tower
 					spark2 = Instantiate (spark, transform.position, Quaternion.identity)as GameObject;
 					spark2.GetComponent<SparkBehaviour> ().damage = towerLevel*2;
 				} else {
+					Destroy (spark2);
 					Invoke ("CreateBullet", 0.1f);
 				}
 			}
