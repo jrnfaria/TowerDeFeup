@@ -61,32 +61,41 @@
 	     </wave>
 	     <wave>
 	     	<content>
-		     	<enemy type="FEP"><quantity>3</quantity></enemy>
+	     		<enemy type="ISEP"><quantity>3</quantity></enemy>
+		     	<enemy type="FEP"><quantity>1</quantity></enemy>
 	     	</content>
 	     </wave>
 	     <wave>
 	     	<content>
-		     	<enemy type="FEP"><quantity>3</quantity></enemy>
+		     	<enemy type="FEP"><quantity>2</quantity></enemy>
 		     	<enemy type="FMUP"><quantity>1</quantity></enemy>
 		     	<enemy type="ISEP"><quantity>3</quantity></enemy>
 	     	</content>
 	     </wave>
 	   	<wave>
 	     	<content>
-		     	<enemy type="FADEUP"><quantity>6</quantity></enemy>
+		     	<enemy type="FADEUP"><quantity>4</quantity></enemy>
 	     	</content>
 	     </wave>
 	     <wave>
 	     	<content>
-	     		<enemy type="FADEUP"><quantity>5</quantity></enemy>
-		     	<enemy type="FEP"><quantity>6</quantity></enemy>
+		     	<enemy type="FEP"><quantity>2</quantity></enemy>
+		     	<enemy type="FMUP"><quantity>1</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>3</quantity></enemy>
+		     	<enemy type="FADEUP"><quantity>3</quantity></enemy>
+	     	</content>
+	     </wave>
+	     <wave>
+	     	<content>
+	     		<enemy type="FADEUP"><quantity>4</quantity></enemy>
+		     	<enemy type="FEP"><quantity>5</quantity></enemy>
+		     	<enemy type="FMUP"><quantity>1</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>4</quantity></enemy>
+		     	<enemy type="FADEUP"><quantity>4</quantity></enemy>
+		     	<enemy type="FEP"><quantity>3</quantity></enemy>
 		     	<enemy type="FMUP"><quantity>2</quantity></enemy>
-		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
-		     	<enemy type="FADEUP"><quantity>5</quantity></enemy>
-		     	<enemy type="FEP"><quantity>4</quantity></enemy>
-		     	<enemy type="FMUP"><quantity>3</quantity></enemy>
-		     	<enemy type="ISEP"><quantity>5</quantity></enemy>
-		     	<enemy type="FADEUP"><quantity>5</quantity></enemy>
+		     	<enemy type="ISEP"><quantity>4</quantity></enemy>
+		     	<enemy type="FADEUP"><quantity>4</quantity></enemy>
 	     	</content>
 	     </wave>
 	      <wave>
