@@ -5,7 +5,7 @@ public class Close : MonoBehaviour {
 
 	public void close()
 	{
-		//TODO Exit
+		Application.Quit ();
 
 	}
 }
