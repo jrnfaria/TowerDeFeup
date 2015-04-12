@@ -1,22 +1,9 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\real_level1.xml">
     <Files>
-      <File FileName="Assets\Levels\real_level1.xml" Line="118" Column="8" />
-      <File FileName="Assets\Scripts\GameLogic\BaseBehaviour.cs" Line="25" Column="15" />
-      <File FileName="Assets\Scripts\GameLogic\FinishConditions.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic\EnemySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\UpgradeTowerGUI.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\GameController.cs">
-    <Files>
-      <File FileName="Assets\Scripts\GameLogic\EnemySpawner.cs" Line="61" Column="15" />
-      <File FileName="Assets\Scripts\GameLogic\FinishConditions.cs" Line="11" Column="68" />
-      <File FileName="Assets\Scripts\GUI\UpgradeTowerGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="32" Column="110" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Towers\SparkBehaviour.cs" Line="41" Column="29" />
+      <File FileName="Assets\Levels\real_level1.xml" Line="114" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
