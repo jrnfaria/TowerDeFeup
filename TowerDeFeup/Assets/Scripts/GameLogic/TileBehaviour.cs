@@ -23,13 +23,7 @@ public class TileBehaviour : MonoBehaviour {
 	
 	void OnMouseOver(){
 
-		if (Input.GetMouseButtonDown (0)&&!used) {
-			Instantiate (tower4, transform.position, Quaternion.identity);
-			{
-			used = true;
-			closeInterfaces ();
-			}
-		} else if (Input.GetMouseButtonDown (1)&&!used) {
+	if (Input.GetMouseButtonDown (0)&&!used) {
 			closeInterfaces ();
 			gui.enabled = true;
 		}

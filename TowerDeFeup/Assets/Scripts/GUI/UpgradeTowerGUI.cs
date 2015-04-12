@@ -52,11 +52,11 @@ public class UpgradeTowerGUI : MonoBehaviour {
 
 		GUI.Box(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,boxWidth,boxHeight),"");
 		GUI.DrawTexture(new Rect(10*rx+wantedPos.x-offsetX2,wantedPos.y+offsetY2,buttonWidth,buttonHeight) , textureSell);
-		GUI.Label(new Rect(15 * rx+wantedPos.x-offsetX2,30*ry+wantedPos.y+offsetY2,50*rx,20*ry),(money/2*towerSript.getTowerLevel()).ToString());
+		GUI.Label(new Rect(15 * rx+wantedPos.x-offsetX2,30*ry+wantedPos.y+offsetY2,50*rx,20*ry),(money+money/2*(towerSript.getTowerLevel()-1)).ToString());
 		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,boxWidth,boxHeight), "", new GUIStyle())) {
 			transform.root.GetComponent<TileBehaviour>().SendMessage("setUsed",false);
 			Destroy (transform.parent.gameObject);
-			gCtrl.addMoney(money/2*towerSript.getTowerLevel());
+			gCtrl.addMoney(money+money/2*(towerSript.getTowerLevel()-1));
 			enabled=false;
 		}
 	}
