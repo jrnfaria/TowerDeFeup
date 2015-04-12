@@ -24,7 +24,7 @@ public class TowerRangeBehaviour : MonoBehaviour {
 	public void setDistance(float d)
 	{
 		dist = d;
-		transform.localScale = new Vector3 (dist/11f,dist/11f, 0);
+		transform.localScale = new Vector3 (dist/12f,dist/12f*2, 0);
 	}
 
 	public void setRange(bool s)

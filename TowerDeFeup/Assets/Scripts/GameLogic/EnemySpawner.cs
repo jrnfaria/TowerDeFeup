@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour {
 					k++;
 					j=0;
 				}
-			}else{
+			}else if(GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().getEnemies().Count==0) {
 				l++;
 				k=0;
 			}

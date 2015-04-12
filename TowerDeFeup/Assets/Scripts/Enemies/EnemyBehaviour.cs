@@ -11,11 +11,13 @@ public class EnemyBehaviour : MonoBehaviour {
 	public int maxHealth;
 	private int index=0;
 	public int money;
+
+	private bool dead;
 	
 	// Use this for initialization
 	void Start () {
 		
-		
+		dead = false;
 		animator = GetComponent<Animator>();
 		foreach(GameObject way in GameObject.FindGameObjectsWithTag("Waypoint"))
 		{
@@ -28,7 +30,16 @@ public class EnemyBehaviour : MonoBehaviour {
 		
 		index = index + 1;
 	}
-	
+
+	public bool isDead()
+	{
+		return dead;
+	}
+
+	public void setDead(bool d)
+	{
+		dead = d;
+	}
 	
 	// Update is called once per frame
 	void Update () {

@@ -35,9 +35,13 @@ public class SparkBehaviour : MonoBehaviour {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
 			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - damage;
 			if(behaviour.health<=0){
-				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
+				if(!behaviour.isDead())
+				{
 				Destroy (gameObject);
 				Destroy (other.transform.parent.gameObject);
+				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
+				behaviour.setDead(true);
+				}
 			}
 		}
 	}

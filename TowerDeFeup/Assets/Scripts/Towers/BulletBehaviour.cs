@@ -26,9 +26,10 @@ public class BulletBehaviour : MonoBehaviour {
 			EnemyBehaviour behaviour=other.gameObject.GetComponent<EnemyBehaviour> ();
 			behaviour.health = other.gameObject.GetComponent<EnemyBehaviour> ().health - damage;
 			Destroy (gameObject);
-			if(behaviour.health<=0)
+			if(behaviour.health<=0 && !behaviour.isDead())
 			{
 				GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ().addMoney (other.GetComponent<EnemyBehaviour>().money);
+				behaviour.setDead(true);
 				Destroy (other.transform.parent.gameObject);
 			}
 		}

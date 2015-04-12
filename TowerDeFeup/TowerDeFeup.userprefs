@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\TileBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Towers\CrackBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\TileBehaviour.cs" Line="26" Column="2" />
-      <File FileName="..\..\..\..\Desktop\TowerDeFeup\TowerDeFeup\Assets\Scripts\Towers\SparkBehaviour.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Desktop\TowerDeFeup\TowerDeFeup\Assets\Levels\real_level1.xml" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Desktop\TowerDeFeup\TowerDeFeup\Assets\Scripts\GameLogic\TileBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\UpgradeTowerGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Levels\real_level1.xml" Line="49" Column="25" />
+      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Towers\SparkBehaviour.cs" Line="43" Column="5" />
+      <File FileName="Assets\Scripts\Enemies\EnemyBehaviour.cs" Line="41" Column="12" />
+      <File FileName="Assets\Scripts\Towers\CrackBehaviour.cs" Line="28" Column="27" />
+      <File FileName="Assets\Scripts\Towers\BulletBehaviour.cs" Line="32" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
