@@ -56,4 +56,8 @@ public class EnemySpawner : MonoBehaviour {
 			Application.LoadLevel(14);
 		}
 	}
+
+	public string getWaveNo(){
+		return (l+1)+"/"+enemyNo.Length;
+	}
 }

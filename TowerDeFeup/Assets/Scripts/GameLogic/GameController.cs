@@ -8,10 +8,15 @@ public class GameController : MonoBehaviour {
 	public int money;
 	public int health;
 	public Texture2D moneyTexture, healthTexture;
+	private Texture2D nextEnemy;
+	private EnemySpawner enemyInfo;
 	private List<GameObject> enemies;
+	private bool isPaused=false;
+	private string pauseText="Pause";
 
 	// Use this for initialization
 	void Start () {
+		enemyInfo = GameObject.FindGameObjectWithTag ("GameController").GetComponent<EnemySpawner> ();
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
 	
@@ -20,8 +25,26 @@ public class GameController : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		GUI.Box (new Rect (10,10,100,50), new GUIContent(getSpaces(money), moneyTexture));
-		GUI.Box (new Rect (10,70,100,50), new GUIContent(getSpaces(health), healthTexture));
+		float width=Screen.width/1366, height=Screen.height/597;
+
+		GUI.Box (new Rect (10*width,10*height,100*width,50*height), new GUIContent(getSpaces(money), moneyTexture));
+		GUI.Box (new Rect (10*width,70*height,100*width,50*height), new GUIContent(getSpaces(health), healthTexture));
+		GUI.Box (new Rect (10*width,130*height,100*width,50*height), new GUIContent("Wave\n"+(enemyInfo.getWaveNo())));
+		if (GUI.Button (new Rect (10 * width, 250 * height, 150 * width, 40 * height), new GUIContent (pauseText))) {
+			if (isPaused) {
+				Time.timeScale = 1.0f;
+				pauseText="Pause";
+				isPaused=false;
+			} else {
+				Time.timeScale = 0;
+				pauseText="Continue";
+				isPaused=true;
+			}
+		}
+		if(GUI.Button (new Rect (10*width,300*height,150*width,40*height), new GUIContent ("Try again")))
+			Application.LoadLevel(2);
+		if(GUI.Button (new Rect (10*width,350*height,150*width,40*height), new GUIContent ("Give up")))
+			Application.LoadLevel(0);
 	}
 
 	private string getSpaces(int value){
