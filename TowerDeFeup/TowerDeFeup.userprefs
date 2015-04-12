@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\TileBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\FinishConditions.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\TileBehaviour.cs" Line="26" Column="2" />
-      <File FileName="..\..\..\..\Desktop\TowerDeFeup\TowerDeFeup\Assets\Scripts\Towers\SparkBehaviour.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Desktop\TowerDeFeup\TowerDeFeup\Assets\Levels\real_level1.xml" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Desktop\TowerDeFeup\TowerDeFeup\Assets\Scripts\GameLogic\TileBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\FinishConditions.cs" Line="13" Column="29" />
+      <File FileName="Assets\Scripts\GameLogic\TileBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\UpgradeTowerGUI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
