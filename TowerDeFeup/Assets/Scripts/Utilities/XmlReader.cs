@@ -33,8 +33,12 @@ public class wave
 [XmlRoot("game")]
 public class Container
 {
-	public int tilesX;
+	public int health;
 
+	public int money;
+
+	public int tilesX;
+	
 	public int tilesY;
 	
 	[XmlArray("path")]
@@ -50,11 +54,11 @@ public class XmlReader : MonoBehaviour {
 	
 	public Container container;
 
-	public void read () {
+	public void read (string name) {
 
 		//read xml
 		var serializer = new XmlSerializer (typeof(Container));
-		var stream = new FileStream (Application.dataPath + "/Levels/real_level1.xml", FileMode.Open);
+		var stream = new FileStream (Application.dataPath + "/Levels/"+name+".xml", FileMode.Open);
 		container = serializer.Deserialize (stream) as Container;
 		stream.Close ();
 

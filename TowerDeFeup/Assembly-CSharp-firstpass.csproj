@@ -59,6 +59,8 @@
      <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <None Include="Assets\Levels\real_level1.xml" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
+     <None Include="Assets\Levels\Level 2.xml" />
+     <None Include="Assets\Levels\Level 1.xml" />
      <None Include="Assets\Levels\level1.xml" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
  <Reference Include="UnityEngine.UI">

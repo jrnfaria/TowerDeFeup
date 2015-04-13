@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		health = this.GetComponent<XmlReader> ().container.health;
+		money = this.GetComponent<XmlReader> ().container.money;
 		enemyInfo = GameObject.FindGameObjectWithTag ("GameController").GetComponent<EnemySpawner> ();
 		InvokeRepeating ("calcEnemies",0.05f,0.05f);
 	}
@@ -24,13 +26,19 @@ public class GameController : MonoBehaviour {
 	void Update () {
 	}
 
+	public void readMH(){
+		health = this.GetComponent<XmlReader> ().container.health;
+		money = this.GetComponent<XmlReader> ().container.money;
+	}
+
 	void OnGUI () {
 		float width=Screen.width/1366, height=Screen.height/597;
 
 		GUI.Box (new Rect (10*width,10*height,100*width,50*height), new GUIContent(getSpaces(money), moneyTexture));
 		GUI.Box (new Rect (10*width,70*height,100*width,50*height), new GUIContent(getSpaces(health), healthTexture));
-		GUI.Box (new Rect (10*width,130*height,100*width,50*height), new GUIContent("Wave\n"+(enemyInfo.getWaveNo())));
-		if (GUI.Button (new Rect (10 * width, 250 * height, 150 * width, 40 * height), new GUIContent (pauseText))) {
+		GUI.Box (new Rect (10*width,130*height,100*width,50*height), new GUIContent("Level\n"+GetComponent<GridLayoutBehaviour>().getLevel()));
+		GUI.Box (new Rect (10*width,190*height,100*width,50*height), new GUIContent("Wave\n"+(enemyInfo.getWaveNo())));
+		if (GUI.Button (new Rect (10 * width, 310 * height, 150 * width, 40 * height), new GUIContent (pauseText))) {
 			if (isPaused) {
 				Time.timeScale = 1.0f;
 				pauseText="Pause";
@@ -41,9 +49,9 @@ public class GameController : MonoBehaviour {
 				isPaused=true;
 			}
 		}
-		if(GUI.Button (new Rect (10*width,300*height,150*width,40*height), new GUIContent ("Try again")))
+		if(GUI.Button (new Rect (10*width,360*height,150*width,40*height), new GUIContent ("Try again")))
 			Application.LoadLevel(2);
-		if(GUI.Button (new Rect (10*width,350*height,150*width,40*height), new GUIContent ("Give up")))
+		if(GUI.Button (new Rect (10*width,410*height,150*width,40*height), new GUIContent ("Give up")))
 			Application.LoadLevel(0);
 	}
 
@@ -74,7 +82,6 @@ public class GameController : MonoBehaviour {
 	{
 		money = m + money;
 	}
-
 
 
 	void calcEnemies ()

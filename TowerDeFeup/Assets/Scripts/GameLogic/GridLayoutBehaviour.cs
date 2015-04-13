@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
 
 
 public class GridLayoutBehaviour : MonoBehaviour {
@@ -10,10 +12,19 @@ public class GridLayoutBehaviour : MonoBehaviour {
 	public GameObject feup;
 	private int tilesX;
 	private int tilesY;
+	private int level = 1;
+	private GameObject feupBase;
 	
 	// Use this for initialization
 	void Awake () {
-		this.GetComponent<XmlReader> ().read();
+		read ();
+	}
+
+	public void read(){
+		try{
+			this.GetComponent<XmlReader> ().read("Level "+level);
+		}catch (FileNotFoundException){}
+
 		Container container = this.GetComponent<XmlReader>().container;
 		
 		tilesX = container.tilesX;
@@ -31,15 +42,16 @@ public class GridLayoutBehaviour : MonoBehaviour {
 			{
 				name=getPath(x,y,container.paths);
 				if(name=="Last"){
-					GameObject obj = (GameObject)Instantiate(feup);
-					obj.transform.position = new Vector3(x-offsetX,y-offsetY,0);
+					Destroy (feupBase);
+					feupBase = (GameObject)Instantiate(feup);
+					feupBase.transform.position = new Vector3(x-offsetX,y-offsetY,0);
 				}else if(name==""){
 					GameObject obj = (GameObject)Instantiate(tile);
 					obj.transform.position = new Vector3(x-offsetX,y-offsetY,0);
 				}
 			}
 		}
-
+		
 		for (int i=0; i<container.paths.Count; i++) {
 			
 			GameObject obj = (GameObject)Instantiate(pathTile);
@@ -65,5 +77,13 @@ public class GridLayoutBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public int getLevel(){
+		return level;
+	}
+
+	public void setLevel(){
+		level++;
 	}
 }
