@@ -39,12 +39,14 @@ public class EnemySpawner : MonoBehaviour {
 			}
 			Invoke ("SpawnEnemy", 0.5f);
 		} else if (l == enemyNo.Length) {//victory
+			destroyTowers();
+			destroyTiles();
+			destroyPaths();
 			glb.setLevel();
 			readLevel();
 			glb.read();
 			GetComponent<GameController>().readMH();
 			Debug.Log("level = " + glb.getLevel());
-			destroyTowers();
 			k=0;j=0;l=0;
 		}
 	}
@@ -52,6 +54,22 @@ public class EnemySpawner : MonoBehaviour {
 	public void destroyTowers(){
 		
 		GameObject[]go = GameObject.FindGameObjectsWithTag("Tower");
+		for(int i=0; i<go.Length;i++){
+			Destroy(go[i]);
+		}
+	}
+	
+	public void destroyTiles(){
+		
+		GameObject[]go = GameObject.FindGameObjectsWithTag("Tile");
+		for(int i=0; i<go.Length;i++){
+			Destroy(go[i]);
+		}
+	}
+	
+	public void destroyPaths(){
+		
+		GameObject[]go = GameObject.FindGameObjectsWithTag("Waypoint");
 		for(int i=0; i<go.Length;i++){
 			Destroy(go[i]);
 		}

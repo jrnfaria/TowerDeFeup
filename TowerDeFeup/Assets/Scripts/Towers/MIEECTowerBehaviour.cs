@@ -95,6 +95,7 @@ public class MIEECTowerBehaviour : Tower
 
 	void OnDestroy() {
 		DestroyImmediate (spark2,true);
+		Destroy (range);
 	}
 
 	public void CreateBullet ()

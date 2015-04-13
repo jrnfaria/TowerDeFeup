@@ -133,4 +133,8 @@ public class MIEQTowerBehaviour : Tower
 			}
 		}
 	}
+	
+	void OnDestroy(){
+		Destroy (range);
+	}
 }

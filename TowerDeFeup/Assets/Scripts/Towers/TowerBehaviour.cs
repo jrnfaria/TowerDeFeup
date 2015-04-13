@@ -163,4 +163,8 @@ public class TowerBehaviour : Tower
 				transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.identity, speed * Time.deltaTime); 
 		}
 	}
+	
+	void OnDestroy(){
+		Destroy (range);
+	}
 }

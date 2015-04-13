@@ -118,5 +118,9 @@ public class LCEEMGTowerBehaviour : Tower
 		}
 		shootedEnemy = nearestObj;
 	}
+
+	void OnDestroy(){
+		Destroy (range);
+	}
 }
 
