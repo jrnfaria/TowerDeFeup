@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <game>
-	<health>3</health>
+	<health>1</health>
 	<money>400</money>
 	<tilesX>15</tilesX>
 	<tilesY>11</tilesY>
