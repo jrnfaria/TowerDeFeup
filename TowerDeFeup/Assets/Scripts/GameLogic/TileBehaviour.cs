@@ -61,21 +61,25 @@ public class TileBehaviour : MonoBehaviour {
 			tower=Instantiate (tower1, transform.position, Quaternion.identity) as GameObject;
 			tower.transform.parent=transform;
 			used=true;
+			GetComponent<Collider2D>().enabled=false;
 		}
 		else if (towerPlacement == 2 && !used) {
 			tower=Instantiate (tower2, transform.position, Quaternion.identity)as GameObject;
 			tower.transform.parent=transform;
 			used=true;
+			GetComponent<Collider2D>().enabled=false;
 		}
 		else if (towerPlacement == 3 && !used) {
 			tower=Instantiate (tower3, transform.position, Quaternion.identity)as GameObject;
 			tower.transform.parent=transform;
 			used=true;
+			GetComponent<Collider2D>().enabled=false;
 		}
 		else if (towerPlacement == 4 && !used) {
 			tower=Instantiate (tower4, transform.position, Quaternion.identity)as GameObject;
 			tower.transform.parent=transform;
 			used=true;
+			GetComponent<Collider2D>().enabled=false;
 		}
 	}
 }

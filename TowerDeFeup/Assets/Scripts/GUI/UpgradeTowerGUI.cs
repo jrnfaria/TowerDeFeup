@@ -59,6 +59,7 @@ public class UpgradeTowerGUI : MonoBehaviour {
 		GUI.Label(new Rect(15 * rx+wantedPos.x-offsetX2,30*ry+wantedPos.y+offsetY2,50*rx,20*ry),(money+money/2*(towerSript.getTowerLevel()-1)).ToString());
 		if(GUI.Button(new Rect(wantedPos.x-offsetX2,wantedPos.y+offsetY2,boxWidth,boxHeight), "", new GUIStyle())) {
 			transform.root.GetComponent<TileBehaviour>().SendMessage("setUsed",false);
+			transform.root.GetComponent<Collider2D>().enabled=true;
 			Destroy (transform.parent.gameObject);
 			gCtrl.addMoney(money+money/2*(towerSript.getTowerLevel()-1));
 			enabled=false;

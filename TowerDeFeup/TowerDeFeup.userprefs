@@ -1,13 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\UpgradeTowerGUI.cs">
     <Files>
-      <File FileName="Assets\Scripts\Utilities\XmlReader.cs" Line="38" Column="18" />
-      <File FileName="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" Line="27" Column="3" />
-      <File FileName="Assets\Scripts\GameLogic\EnemySpawner.cs" Line="18" Column="9" />
-      <File FileName="Assets\Levels\Level 1.xml" Line="3" Column="20" />
-      <File FileName="Assets\Levels\Level 2.xml" Line="4" Column="20" />
-      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="44" Column="23" />
+      <File FileName="Assets\Scripts\GameLogic\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Levels\Level 1.xml" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Utilities\XmlReader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\GridLayoutBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\EnemySpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Levels\Level 2.xml" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\TileBehaviour.cs" Line="82" Column="45" />
+      <File FileName="Assets\Scripts\GUI\UpgradeTowerGUI.cs" Line="62" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
